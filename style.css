@@ -2,3 +2,16 @@
 @import 'reveal.js/dist/reveal.css';
 @import 'reveal.js/dist/theme/simple.css';
 
+@font-face {
+    font-family: "Atkinson Hyperlegible Regular";
+    src: url("assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Bold";
+    src: url("assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
+}
+
+:root {
+    --r-main-font: "Atkinson Hyperlegible Regular";
+    --r-heading-font: "Atkinson Hyperlegible Bold";
+}
