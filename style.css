@@ -1,6 +1,7 @@
 @import 'reveal.js/dist/reset.css';
 @import 'reveal.js/dist/reveal.css';
 @import 'reveal.js/dist/theme/simple.css';
+@import 'reveal.js/plugin/highlight/monokai.css';
 
 @font-face {
     font-family: "Atkinson Hyperlegible Regular";
@@ -14,4 +15,13 @@
 :root {
     --r-main-font: "Atkinson Hyperlegible Regular";
     --r-heading-font: "Atkinson Hyperlegible Bold";
+}
+
+h1.title {
+    font-size: 2.2em;
+    margin-bottom: 1em;
+}
+
+.small {
+    font-size: 0.8em;
 }
