@@ -18,8 +18,13 @@
 }
 
 h1.title {
-    font-size: 2.2em;
-    margin-bottom: 1em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+p.subtitle {
+    font-size: 0.9em;
+    margin-bottom: 2em;
 }
 
 .small {
