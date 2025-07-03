@@ -30,3 +30,12 @@ p.subtitle {
 .small {
     font-size: 0.8em;
 }
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logos img {
+    margin: 1em;
+}
