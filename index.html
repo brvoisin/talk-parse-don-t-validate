@@ -52,17 +52,25 @@
         </section>
 
         <section>
-          <h2>Exemple et problèmes</h2>
-          <pre><code data-trim>
-            from typing import TypeVar
+          <h2>Le domaine des possibilités</h2>
+          <pre><code data-trim data-line-numbers class="language-python">
+            from collections.abc import Sequence
 
-            T = TypeVar("T")
-
-
-            def head(a: list[T]) -> T:
+            def head[T](a: Sequence[T]) -> T:
                 return a[0]
           </code></pre>
-          <p>…</p>
+          <div class="fragment">
+            <pre><code data-trim data-line-numbers class="language-python">
+              head([])
+            </code></pre>
+            <pre><code data-trim class="language-plaintext">
+              IndexError: list index out of range
+            </code></pre>
+            <p>
+              La fonction est partielle :<br />
+              toutes les entrées possibles ne sont pas prises en compte.
+            </p>
+          </div>
         </section>
 
         <section>
