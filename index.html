@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Et si on évitait les bugs avant même d'exécuter le code ?</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Et si on évitait les bugs avant même d'exécuter le code ?</title>
-</head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 class="title">
+            Et si on évitait les bugs avant même d'exécuter le code ?
+          </h1>
+          <p class="subtitle">Utilisez pleinement la puissance des types</p>
+          <p class="speaker">Bruno Voisin</p>
+          <p class="event">Tremplin Bordelais 2025</p>
+        </section>
 
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section>
-        <h1 class="title">
-          Et si on évitait les bugs avant même d'exécuter le code ?
-        </h1>
-        <p class="subtitle">Utilisez pleinement la puissance des types</p>
-        <p class="speaker">Bruno Voisin</p>
-        <p class="event">Tremplin Bordelais 2025</p>
-      </section>
+        <section>
+          <h2>Je me présente 👋</h2>
+          <p>Bruno Voisin</p>
+          <p>Ingénieur logiciel depuis 13 ans</p>
+          <div class="logos">
+            <img src="assets/images/yaal-logo-160.jpg" alt="Yaal" />
+            <img src="assets/images/sinch-logo-small.png" alt="Sinch" />
+          </div>
+        </section>
 
-      <section>
-        <h2>Je me présente 👋</h2>
-        <p>Bruno Voisin</p>
-        <p>Ingénieur logiciel depuis 13 ans</p>
-        <div class="logos">
-          <img src="assets/images/yaal-logo-160.jpg" alt="Yaal">
-          <img src="assets/images/sinch-logo-small.png" alt="Sinch">
-        </div>
-      </section>
+        <section>
+          <h2>Présentation du sujet</h2>
+          <p>
+            <a
+              href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"
+              rel="external"
+            >
+              Parse, don’t validate
+            </a>
+            — Alexis Kins
+          </p>
+          <p class="small">
+            <a
+              href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
+              rel="external"
+            >
+              Type Safety and Non-Empty Tuples in Python
+            </a>
+            — Aaron Zuspan
+          </p>
+        </section>
 
-      <section>
-        <h2>Présentation du sujet</h2>
-        <p>
-          <a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/" rel="external">
-            Parse, don’t validate
-          </a>
-          — Alexis Kins
-        </p>
-        <p class="small">
-          <a href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/" rel="external">
-            Type Safety and Non-Empty Tuples in Python
-          </a>
-          — Aaron Zuspan
-        </p>
-      </section>
-
-      <section>
-        <h2>Exemple et problèmes</h2>
-        <pre><code data-trim>
+        <section>
+          <h2>Exemple et problèmes</h2>
+          <pre><code data-trim>
             from typing import TypeVar
 
             T = TypeVar("T")
 
 
             def head(a: list[T]) -> T:
-            return a[0]
+                return a[0]
           </code></pre>
-        <p>…</p>
-      </section>
+          <p>…</p>
+        </section>
 
-      <section>
-        <h2>…</h2>
-      </section>
+        <section>
+          <h2>…</h2>
+        </section>
 
-      <section>
-        <h2>The end</h2>
-        <p>Remerciements</p>
-        <p>Questions</p>
-      </section>
+        <section>
+          <h2>The end</h2>
+          <p>Remerciements</p>
+          <p>Questions</p>
+        </section>
+      </div>
     </div>
-  </div>
-  <script type="module" src="/main.js"></script>
-</body>
-
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
