@@ -15,10 +15,11 @@
 :root {
     --r-main-font: "Atkinson Hyperlegible Regular";
     --r-heading-font: "Atkinson Hyperlegible Bold";
+    --r-heading1-size: 2em;
+    --r-heading2-size: 1.8em;
 }
 
 h1.title {
-    font-size: 2em;
     margin-bottom: 0.5em;
 }
 
