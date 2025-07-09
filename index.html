@@ -67,10 +67,84 @@
               IndexError: list index out of range
             </code></pre>
             <p>
-              La fonction est partielle :<br />
+              La fonction est <strong>partielle</strong> :<br />
               toutes les entrées possibles ne sont pas prises en compte.
             </p>
           </div>
+        </section>
+
+        <section>
+          <h2>Fonction totale</h2>
+          <p>Toutes les entrées possibles sont prises en compte.</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <pre data-id="code-solution-1"><code data-trim data-line-numbers class="language-python">
+            def head[T](a: Sequence[T]) -> T | None:
+                if not a:
+                    return None
+                return a[0]
+          </code></pre>
+          <div class="fragment">
+            <pre><code data-trim data-line-numbers class="language-python">
+              print(head([]))
+              print(head([1, 2, 3]))
+              print(head([None]))
+            </code></pre>
+            <pre><code data-trim class="language-plaintext">
+              None
+              1
+              None
+            </code></pre>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <pre data-id="code-solution-1"><code data-trim data-line-numbers class="language-python">
+            from typing import NewType
+
+            NothingType = NewType("NothingType", str)
+            Nothing = NothingType("Nothing")
+
+            def head[T](a: Sequence[T]) -> T | NothingType:
+                if not a:
+                    return Nothing
+                return a[0]
+          </code></pre>
+          <div class="fragment">
+            <pre><code data-trim data-line-numbers class="language-python">
+              print(head([]))
+              print(head([1, 2, 3]))
+              print(head([None]))
+            </code></pre>
+            <pre><code data-trim class="language-plaintext">
+              Nothing
+              1
+              None
+            </code></pre>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <p>À l'usage, on doit vérifier la valeur de retour.</p>
+          <p>Exemple d'utilisation…</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <h4>Les problèmes</h4>
+          <ol>
+            <li>😮‍💨 Vérifications redondantes</li>
+            <li>📈 Coût de performance sur des cas plus complexes</li>
+            <li>🐛 Un bug est probable à l'avenir : …</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Solution 2 : interdire la séquence vide</h3>
         </section>
 
         <section>
