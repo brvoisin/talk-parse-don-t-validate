@@ -30,25 +30,34 @@
         </section>
 
         <section>
-          <h2>Présentation du sujet</h2>
-          <p>
-            <a
-              href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"
-              rel="external"
-            >
-              Parse, don’t validate
-            </a>
-            — Alexis Kins
-          </p>
-          <p class="small">
-            <a
-              href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
-              rel="external"
-            >
-              Type Safety and Non-Empty Tuples in Python
-            </a>
-            — Aaron Zuspan
-          </p>
+          <h2 class="hidden">Présentation du sujet</h2>
+          <div class="preview">
+            <div class="link">
+              <a
+                href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"
+                rel="external"
+              >
+                lexi-lambda.github.io
+              </a>
+            </div>
+            <div class="title">
+              <a
+                href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"
+                rel="external"
+              >
+                Parse, don’t validate
+              </a>
+            </div>
+            <div class="description">
+              <p>
+                Historically, I’ve struggled to find a concise, simple way to
+                explain what it means to practice type-driven design. Too often,
+                when someone asks me “How did you come up with this approach?” I
+                find I can’t give them a satisfying answer.
+              </p>
+            </div>
+            <div class="author">Alexis King</div>
+          </div>
         </section>
 
         <section>
@@ -80,7 +89,9 @@
 
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
-          <pre data-id="code-solution-1"><code data-trim data-line-numbers class="language-python">
+          <pre
+            data-id="code-solution-1"
+          ><code data-trim data-line-numbers class="language-python">
             def head[T](a: Sequence[T]) -> T | None:
                 if not a:
                     return None
@@ -102,7 +113,9 @@
 
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
-          <pre data-id="code-solution-1"><code data-trim data-line-numbers class="language-python">
+          <pre
+            data-id="code-solution-1"
+          ><code data-trim data-line-numbers class="language-python">
             from typing import NewType
 
             NothingType = NewType("NothingType", str)

@@ -42,6 +42,43 @@ p.subtitle {
     margin: 1em;
 }
 
+.hidden {
+    display: none;
+}
+
+.preview {
+    width: 60%;
+    margin: auto;
+    border: 3px solid color-mix(in srgb, var(--r-link-color) 30%, var(--r-background-color));
+    border-radius: 10px;
+    font-size: 0.7em;
+    text-align: justify;
+    padding: 1em;
+    box-shadow: 7px 10px 10px rgba(0, 0, 0, 0.15);
+}
+.preview .link {
+    font-size: 0.7em;
+    opacity: 0.7;
+}
+.preview .link::before {
+    content: ">";
+    padding-right: 0.2em;
+}
+.preview .title {
+    font-family: "Atkinson Hyperlegible Bold";
+    font-size: 1.8em;
+}
+.preview .description {
+    font-size: 0.9em;
+}
+.preview .author {
+    font-size: 1.1em;
+}
+.preview .author::before {
+    content: "—";
+    padding-right: 0.3em;
+}
+
 strong {
     font-family: "Atkinson Hyperlegible Bold";
     font-weight: normal;
