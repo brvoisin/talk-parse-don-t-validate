@@ -167,7 +167,43 @@
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
           <p>À l'usage, on doit vérifier la valeur de retour.</p>
-          <p>Exemple d'utilisation…</p>
+          <pre><code data-trim data-line-numbers="6-9|12-16|19-28" class="language-python">
+            import os
+            from collections.abc import Sequence
+            from pathlib import Path
+
+
+            def head[T](seq: Sequence[T]) -> T | None:
+                if not seq:
+                    return None
+                return seq[0]
+
+
+            def get_config_directories() -> Sequence[Path]:
+                config_dirs_string = os.getenv("CONFIG_DIRS", "")
+                if not config_dirs_string:
+                    raise ValueError("CONFIG_DIRS cannot be empty")
+                return [Path(d) for d in config_dirs_string.split(",")]
+
+
+            def main() -> None:
+                config_dirs = get_config_directories()
+                match head(config_dirs):
+                    case None:
+                        raise ValueError(
+                            "should never happen; "
+                            "already checked config_dirs is non-empty"
+                        )
+                    case cache_dir:
+                        initialize_cache(cache_dir)
+
+
+            def initialize_cache(cache_dir: Path) -> None: ...
+
+
+            if __name__ == "__main__":
+                main()
+          </code></pre>
         </section>
 
         <section data-auto-animate>
