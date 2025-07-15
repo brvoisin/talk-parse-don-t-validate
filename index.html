@@ -116,6 +116,8 @@
           <pre
             data-id="code-solution-1"
           ><code data-trim data-line-numbers class="language-python">
+            from collections.abc import Sequence
+
             def head[T](seq: Sequence[T]) -> T | None:
                 if not seq:
                     return None
@@ -140,6 +142,7 @@
           <pre
             data-id="code-solution-1"
           ><code data-trim data-line-numbers class="language-python">
+            from collections.abc import Sequence
             from typing import NewType
 
             NothingType = NewType("NothingType", str)
