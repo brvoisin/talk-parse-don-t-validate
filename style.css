@@ -1,164 +1,166 @@
-@import 'reveal.js/dist/reset.css';
-@import 'reveal.js/dist/reveal.css';
-@import 'reveal.js/dist/theme/simple.css';
-@import 'reveal.js/plugin/highlight/monokai.css';
+@import "reveal.js/dist/reset.css";
+@import "reveal.js/dist/reveal.css";
+@import "reveal.js/dist/theme/simple.css";
+@import "reveal.js/plugin/highlight/monokai.css";
 
 @font-face {
-    font-family: "Atkinson Hyperlegible Regular";
-    src: url("assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+  font-family: "Atkinson Hyperlegible Regular";
+  src: url("assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2")
+    format("woff2");
 }
 @font-face {
-    font-family: "Atkinson Hyperlegible Bold";
-    src: url("assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
+  font-family: "Atkinson Hyperlegible Bold";
+  src: url("assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
 }
 
 :root {
-    --r-main-font: "Atkinson Hyperlegible Regular";
-    --r-heading-font: "Atkinson Hyperlegible Bold";
-    --r-heading1-size: 2em;
-    --r-heading2-size: 1.8em;
-    --r-heading3-size: 1.4em;
+  --r-main-font: "Atkinson Hyperlegible Regular";
+  --r-heading-font: "Atkinson Hyperlegible Bold";
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.8em;
+  --r-heading3-size: 1.4em;
 }
 
 h1.title {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 p.subtitle {
-    font-size: 0.9em;
-    margin-bottom: 2em;
+  font-size: 0.9em;
+  margin-bottom: 2em;
 }
 
 .small {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .logos {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    margin: 1em auto 0 auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin: 1em auto 0 auto;
 }
 .logos .logo-item {
-    flex: 1;
+  flex: 1;
 }
 .logos img {
-    margin: 0;
+  margin: 0;
 }
 .logos .yaal {
-    margin: auto;
-    width: 20cqb;
-    height: 20cqb;
-    border-radius: 50%;
-    background-color: rgb(255, 237, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: auto;
+  width: 20cqb;
+  height: 20cqb;
+  border-radius: 50%;
+  background-color: rgb(255, 237, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logos .yaal img {
-    width: 75%;
+  width: 75%;
 }
 .logos .sinch {
-    width: 80%;
-    background-color: rgb(255, 202, 97);
+  width: 80%;
+  background-color: rgb(255, 202, 97);
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 a.discret {
-    color: var(--r-main-color);
+  color: var(--r-main-color);
 }
 
 .speaker-card {
-    display: flex;
-    text-align: left;
-    align-items: center;
+  display: flex;
+  text-align: left;
+  align-items: center;
 }
 .speaker-card img.portrait {
-    flex: 1;
-    width: 20%;
-    height: 20%;
-    border-radius: 50%;
+  flex: 1;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
 }
 .speaker-card .info {
-    flex: 3;
-    padding-left: 1em;
+  flex: 3;
+  padding-left: 1em;
 }
 .speaker-card .info .name {
-    font-family: "Atkinson Hyperlegible Bold";
-    font-size: 1.2em;
+  font-family: "Atkinson Hyperlegible Bold";
+  font-size: 1.2em;
 }
 .speaker-card .info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.85em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85em;
 }
 .speaker-card .info .location::before,
 .speaker-card .info .organization::before,
 .speaker-card .info .position::before,
 .speaker-card .info .experience::before {
-    content: "";
-    mask-repeat: no-repeat;
-    background-color: var(--r-main-color);
-    display: inline-block;
-    width: 0.9lh;
-    height: 0.9lh;
-    margin-right: 0.4em;
-    vertical-align: sub;
+  content: "";
+  mask-repeat: no-repeat;
+  background-color: var(--r-main-color);
+  display: inline-block;
+  width: 0.9lh;
+  height: 0.9lh;
+  margin-right: 0.4em;
+  vertical-align: sub;
 }
 .speaker-card .info .location::before {
-    mask-image: url("assets/images/location.svg");
+  mask-image: url("assets/images/location.svg");
 }
 .speaker-card .info .organization::before {
-    mask-image: url("assets/images/office.svg");
+  mask-image: url("assets/images/office.svg");
 }
 .speaker-card .info .organization > a {
-    margin-left: -0.25em; /* Offset the whitespace from indentation */
+  margin-left: -0.25em; /* Offset the whitespace from indentation */
 }
 .speaker-card .info .position::before {
-    mask-image: url("assets/images/bag.svg");
+  mask-image: url("assets/images/bag.svg");
 }
 .speaker-card .info .experience::before {
-    mask-image: url("assets/images/clock.svg");
+  mask-image: url("assets/images/clock.svg");
 }
 
 .preview {
-    width: 60%;
-    margin: auto;
-    border: 3px solid color-mix(in srgb, var(--r-link-color) 30%, var(--r-background-color));
-    border-radius: 10px;
-    font-size: 0.7em;
-    text-align: justify;
-    padding: 1em;
-    box-shadow: 7px 10px 10px rgba(0, 0, 0, 0.15);
+  width: 60%;
+  margin: auto;
+  border: 3px solid
+    color-mix(in srgb, var(--r-link-color) 30%, var(--r-background-color));
+  border-radius: 10px;
+  font-size: 0.7em;
+  text-align: justify;
+  padding: 1em;
+  box-shadow: 7px 10px 10px rgba(0, 0, 0, 0.15);
 }
 .preview .link {
-    font-size: 0.7em;
-    opacity: 0.7;
+  font-size: 0.7em;
+  opacity: 0.7;
 }
 .preview .link::before {
-    content: ">";
-    padding-right: 0.2em;
+  content: ">";
+  padding-right: 0.2em;
 }
 .preview .title {
-    font-family: "Atkinson Hyperlegible Bold";
-    font-size: 1.8em;
+  font-family: "Atkinson Hyperlegible Bold";
+  font-size: 1.8em;
 }
 .preview .description {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 .preview .author {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 .preview .author::before {
-    content: "—";
-    padding-right: 0.3em;
+  content: "—";
+  padding-right: 0.3em;
 }
 
 strong {
-    font-family: "Atkinson Hyperlegible Bold";
-    font-weight: normal;
+  font-family: "Atkinson Hyperlegible Bold";
+  font-weight: normal;
 }
