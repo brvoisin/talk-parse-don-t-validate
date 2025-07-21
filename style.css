@@ -164,3 +164,10 @@ strong {
   font-family: "Atkinson Hyperlegible Bold";
   font-weight: normal;
 }
+
+.powered-by {
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
