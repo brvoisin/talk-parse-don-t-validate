@@ -226,7 +226,9 @@
         <section data-auto-animate data-auto-animate-restart>
           <h3>Solution 2 : interdire la séquence vide</h3>
           <div class="fragment">
-            <pre><code data-trim data-line-numbers="|3-4|7-8|" class="language-python">
+            <pre
+              data-id="code-solution-2"
+            ><code data-trim data-line-numbers="|3-4|7-8|" class="language-python">
               from typing import TypeVar, Unpack
 
               T = TypeVar("T")
@@ -238,7 +240,7 @@
             </code></pre>
           </div>
           <div class="fragment">
-            <p class="xsmall">
+            <p class="small">
               <a
                 href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
                 rel="external"
@@ -248,12 +250,26 @@
               — Aaron Zuspan
             </p>
           </div>
-          <div class="fragment">
-            <pre><code data-trim data-line-numbers class="language-python">
-              print(head((1, 2, 3)))  # Output: 1
-              print(head(tuple()))    # Raises IndexError
-            </code></pre>
-          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 2 : interdire la séquence vide</h3>
+          <pre
+            data-id="code-solution-2"
+          ><code data-trim data-line-numbers class="language-python">
+            from typing import TypeVar, Unpack
+
+            T = TypeVar("T")
+            NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
+
+
+            def head(seq: NonEmptyTuple[T]) -> T:
+                return seq[0]
+          </code></pre>
+          <pre><code data-trim data-line-numbers class="language-python">
+            print(head((1, 2, 3)))  # Output: 1
+            print(head(tuple()))    # Raises IndexError
+          </code></pre>
           <div class="fragment">
             <pre><code data-trim class="language-bash">
               mypy .
