@@ -210,8 +210,15 @@ pre + .output {
 }
 
 .powered-by {
-  font-size: 0.7em;
+  font-size: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+p.powered-by {
+  margin-top: 10%;
+}
+.powered-by img {
+  height: 2em;
+  margin-left: 0.4em;
 }
