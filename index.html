@@ -175,7 +175,7 @@
             initialisation d'un cache sur le premier répertoire de
             configuration.
           </p>
-          <pre><code data-trim data-line-numbers="6-9|12-16|13|14-15|16|19-28|20|21|22-26|14-15|27-28" class="language-python">
+          <pre><code data-trim data-line-numbers="6-9|12-21|13|14-18|19-20|21|24-33|25|26|27-31|12,19-20|24,32-33" class="language-python">
             import os
             from collections.abc import Sequence
             from pathlib import Path
@@ -189,9 +189,14 @@
 
             def get_config_directories() -> Sequence[Path]:
                 config_dirs_string = os.getenv("CONFIG_DIRS", "")
-                if not config_dirs_string:
+                config_dirs = [
+                    Path(dir)
+                    for dir in config_dirs_string.split(",")
+                    if dir
+                ]
+                if not config_dirs:
                     raise ValueError("CONFIG_DIRS cannot be empty")
-                return [Path(d) for d in config_dirs_string.split(",")]
+                return config_dirs
 
 
             def main() -> None:
