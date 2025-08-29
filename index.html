@@ -132,6 +132,8 @@
             <pre><code data-trim class="language-plaintext">
               IndexError: list index out of range
             </code></pre>
+          </div>
+          <div class="fragment">
             <p>
               La fonction est <strong>partielle</strong> :<br />
               toutes les entrées possibles ne sont pas prises en compte.
@@ -139,25 +141,39 @@
           </div>
           <aside class="notes">
             <p>
-              Voici une fonction qui retourne le premier élément d'une séquence.
+              On commence simple avec une fonction qui retourne le premier
+              élément d'une séquence.
             </p>
+            <p>Qu'est-ce qui pourrait mal se passer ?</p>
+            <p><strong>NEXT</strong> Une séquence vide provoque une erreur.</p>
             <p>
-              Dans ce cas très simple, on voit tout de suite qu'une séquence
-              vide va lever une exception.
+              Le problème est que la fonction est partielle.
+              <strong>NEXT</strong>
+              Toutes les entrées possibles ne sont pas prises en compte.
             </p>
-            <p>La fonction est partielle…</p>
-            <p>
+            <p>Il faudrait qu'on la transforme en fonction totale.</p>
+            <!--<p>
+              TODO: wrong place
               Le langage me permet de le faire et surtout l'analyse statique des
               types aussi. (mypy)
-            </p>
+            </p>-->
           </aside>
         </section>
 
         <section>
           <h2>Fonction totale</h2>
           <p>Toutes les entrées possibles sont prises en compte.</p>
+          <p class="fragment">
+            Il y a 2 solutions pour rendre notre fonction totale.
+          </p>
           <aside class="notes">
             <p>
+              Une fonction totale est une fonction qui prend en compte toutes
+              les entrées possibles.
+            </p>
+            <p>Qu'est-ce qu'on pourrait faire ?</p>
+            <p>
+              <strong>NEXT</strong>
               Il y a deux façons de passer la fonction <code>head</code> de
               partielle à totale.
             </p>
