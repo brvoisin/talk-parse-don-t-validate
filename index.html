@@ -225,10 +225,109 @@
           <h3>Solution 1 : gérer la séquence vide</h3>
           <h4>Les problèmes</h4>
           <ol>
-            <li>😮‍💨 Vérifications redondantes</li>
-            <li>📈 Coût de performance sur des cas plus complexes</li>
-            <li>🐛 Un bug est probable à l'avenir : …</li>
+            <li class="fragment">😮‍💨 Vérifications redondantes</li>
+            <li class="fragment">
+              📈 Coût de performance sur des cas plus complexes
+            </li>
+            <li class="fragment">
+              🐛 <strong>Un bug est probable à l'avenir</strong> : la fonction
+              <code>get_config_directories</code> pourrait arrêter de vérifier
+              que la liste est vide et le cas impossible devient probable.
+            </li>
           </ol>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <p class="small">Le bug</p>
+          <pre
+            data-id="code-solution-1"
+          ><code data-trim data-line-numbers="19-20,27-31|12-21" class="language-python">
+            import os
+            from collections.abc import Sequence
+            from pathlib import Path
+
+
+            def head[T](seq: Sequence[T]) -> T | None:
+                if not seq:
+                    return None
+                return seq[0]
+
+
+            def get_config_directories() -> Sequence[Path]:
+                config_dirs_string = os.getenv("CONFIG_DIRS", "")
+                config_dirs = [
+                    Path(dir)
+                    for dir in config_dirs_string.split(",")
+                    if dir
+                ]
+                if not config_dirs:
+                    raise ValueError("CONFIG_DIRS cannot be empty")
+                return config_dirs
+
+
+            def main() -> None:
+                config_dirs = get_config_directories()
+                match head(config_dirs):
+                    case None:
+                        raise ValueError(
+                            "should never happen; "
+                            "already checked config_dirs is non-empty"
+                        )
+                    case cache_dir:
+                        initialize_cache(cache_dir)
+
+
+            def initialize_cache(cache_dir: Path) -> None: ...
+
+
+            if __name__ == "__main__":
+                main()
+          </code></pre>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <p class="small">Le bug</p>
+          <pre
+            data-id="code-solution-1"
+          ><code data-trim data-line-numbers="12-21|25-26|6-9" class="language-python">
+            import os
+            from collections.abc import Sequence
+            from pathlib import Path
+
+
+            def head[T](seq: Sequence[T]) -> T | None:
+                if not seq:
+                    return None
+                return seq[0]
+
+
+            def get_config_directories() -> Sequence[Path]:
+                config_dirs_string = os.getenv("CONFIG_DIRS", "")
+                config_dirs = [
+                    Path(dir)
+                    for dir in config_dirs_string.split(",")
+                    if dir
+                ]
+                return config_dirs
+
+
+            def main() -> None:
+                config_dirs = get_config_directories()
+                match head(config_dirs):
+                    case None:
+                        raise ValueError("Hello! I'm a new bug!")
+                    case cache_dir:
+                        initialize_cache(cache_dir)
+
+
+            def initialize_cache(cache_dir: Path) -> None: ...
+
+
+            if __name__ == "__main__":
+                main()
+          </code></pre>
         </section>
 
         <section data-auto-animate data-auto-animate-restart>
@@ -295,7 +394,9 @@
             initialisation d'un cache sur le premier répertoire de
             configuration.
           </p>
-          <pre><code data-trim data-line-numbers="1-10|13-22|14-19|20-22|25-28|31-33" class="language-python">
+          <pre
+            data-id="code-solution-2"
+          ><code data-trim data-line-numbers="1-10|13-22|14-19|20-22|25-28|31-33|13-22|20-21" class="language-python">
             import os
             from pathlib import Path
             from typing import TypeGuard, TypeVar, Unpack
@@ -331,8 +432,7 @@
                 initialize_cache(head(config_dirs))
 
 
-            def initialize_cache(cache_dir: Path) -> None:
-                print(f"Initializing cache in {cache_dir}")
+            def initialize_cache(cache_dir: Path) -> None: ...
 
 
             if __name__ == "__main__":
