@@ -332,10 +332,10 @@
 
         <section data-auto-animate data-auto-animate-restart>
           <h3>Solution 2 : interdire la séquence vide</h3>
-          <div class="fragment">
+          <div class="fragment" data-fragment-index="0">
             <pre
               data-id="code-solution-2"
-            ><code data-trim data-line-numbers="|3-4|7-8|" class="language-python">
+            ><code data-trim data-line-numbers="|3-4|7-8|" class="language-python" data-fragment-index="1">
               from typing import TypeVar, Unpack
 
               T = TypeVar("T")
@@ -346,7 +346,7 @@
                   return seq[0]
             </code></pre>
           </div>
-          <div class="fragment">
+          <div class="fragment" data-fragment-index="1">
             <p class="small">
               <a
                 href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
