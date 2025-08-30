@@ -130,17 +130,15 @@
             <pre><code data-trim data-line-numbers class="language-python">
               print(head([]))
               print(head([1, 2, 3]))
-              print(head([None]))
             </code></pre>
             <pre><code data-trim class="language-plaintext">
               None
               1
-              None
             </code></pre>
           </div>
         </section>
 
-        <section data-auto-animate>
+        <section data-auto-animate data-visibility="hidden">
           <h3>Solution 1 : gérer la séquence vide</h3>
           <pre
             data-id="code-solution-1"
@@ -177,7 +175,9 @@
             initialisation d'un cache sur le premier répertoire de
             configuration.
           </p>
-          <pre><code data-trim data-line-numbers="6-9|12-21|13|14-18|19-20|21|24-33|25|26|27-31|12,19-20|24,32-33" class="language-python">
+          <pre
+            data-id="code-solution-1"
+          ><code data-trim data-line-numbers="6-9|12-21|13|14-18|19-20|21|24-33|25|26|27-31|12,19-20|24,32-33" class="language-python">
             import os
             from collections.abc import Sequence
             from pathlib import Path
