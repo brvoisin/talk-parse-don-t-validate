@@ -1,7 +1,11 @@
 @import "reveal.js/dist/reset.css";
 @import "reveal.js/dist/reveal.css";
 @import "reveal.js/dist/theme/simple.css";
-@import "reveal.js/plugin/highlight/monokai.css";
+@import "assets/css/monokai-sublime.css";
+
+.reveal pre code.hljs {
+  padding: 5px;
+}
 
 @font-face {
   font-family: "Atkinson Hyperlegible Regular";
