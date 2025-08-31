@@ -535,8 +535,47 @@
           </div>
         </section>
 
-        <section>
+        <section data-auto-animate>
           <h2 class="r-fit-text">Parse, don't validate</h2>
+        </section>
+
+        <section data-auto-animate>
+          <h2><span class="erased">Parse, don't</span> validate</h2>
+          <pre
+            data-id="phone-number"
+          ><code data-trim data-line-numbers class="language-python">
+            def validate_phone_number(text: str) -> bool:
+                return len(text) == 10 and text.isdigit()
+
+
+            def send_message(phone_number: str, message: str) -> None:
+                if not validate_phone_number(phone_number):
+                    raise ValueError("Invalid phone number")
+                print(f"Sending message to {phone_number}: {message}")
+          </code></pre>
+        </section>
+
+        <section data-auto-animate>
+          <h2><strong>Parse</strong>, don't validate</h2>
+          <pre
+            data-id="phone-number"
+          ><code data-trim data-line-numbers class="language-python">
+            from typing import NewType
+
+            PhoneNumber = NewType("PhoneNumber", str)
+
+
+            def parse_phone_number(text: str) -> PhoneNumber:
+                if len(text) != 10 and not text.isdigit():
+                    raise ValueError("Invalid phone number")
+                return PhoneNumber(text)
+
+
+            def send_message(
+                phone_number: PhoneNumber, message: str
+            ) -> None:
+                print(f"Sending message to {phone_number}: {message}")
+          </code></pre>
         </section>
 
         <section>
