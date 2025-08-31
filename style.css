@@ -197,13 +197,13 @@ pre + .output {
   margin-bottom: 0.1em;
 }
 .column pre {
-  margin-top: 0.1em;
+  margin: 0 auto;
 }
 .reveal .column pre {
-  width: 96%;
+  width: 98%;
 }
 .reveal .column pre code {
-  font-size: 0.55em;
+  font-size: 0.57em;
   line-height: 1.2em;
   scrollbar-width: thin;
   max-height: 550px;
