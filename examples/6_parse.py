@@ -21,16 +21,16 @@ def is_non_empty(
 
 from typing import NewType
 
-PhoneNumber = NewType("PhoneNumber", str)
+ValidPhoneNumber = NewType("ValidPhoneNumber", str)
 
 
-def parse_phone_number(text: str) -> PhoneNumber:
+def parse_phone_number(text: str) -> ValidPhoneNumber:
     if len(text) != 10 and not text.isdigit():
         raise ValueError("Invalid phone number")
-    return PhoneNumber(text)
+    return ValidPhoneNumber(text)
 
 
 def send_message(
-    phone_number: PhoneNumber, message: str
+    phone_number: ValidPhoneNumber, message: str
 ) -> None:
     print(f"Sending message to {phone_number}: {message}")
