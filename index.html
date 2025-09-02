@@ -644,7 +644,7 @@
           <h2><span class="erased">Parse, don't</span> validate</h2>
           <pre
             data-id="phone-number"
-          ><code data-trim data-line-numbers class="language-python">
+          ><code data-trim data-line-numbers="|1-2|5-8" class="language-python">
             def validate_phone_number(text: str) -> bool:
                 return len(text) == 10 and text.isdigit()
 
@@ -660,7 +660,7 @@
           <h2><strong>Parse</strong>, don't validate</h2>
           <pre
             data-id="phone-number"
-          ><code data-trim data-line-numbers class="language-python">
+          ><code data-trim data-line-numbers="|6-9|12-15" class="language-python">
             from typing import NewType
 
             ValidPhoneNumber = NewType("ValidPhoneNumber", str)
