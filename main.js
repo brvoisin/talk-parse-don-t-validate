@@ -4,6 +4,6 @@ import RevealNotes from "reveal.js/plugin/notes/notes";
 
 Reveal.initialize({
   hash: true,
-
+  maxScale: 3.0,
   plugins: [RevealHighlight, RevealNotes],
 });
