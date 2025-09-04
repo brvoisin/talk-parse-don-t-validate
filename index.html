@@ -19,9 +19,8 @@
           <p class="event">Tremplin Bordelais 2025</p>
           <aside class="notes">
             <p>
-              Bonjour à tous ! Je suis ravi d'être ici aujourd'hui pour vous
-              répondre à cette question : Et si on évitait les bugs avant même
-              d'exécuter le code ?<br />
+              Bonjour à tous ! Dans cette présentation, on va se demander si on
+              peut éviter des bugs avant même d'exécuter le code.<br />
               Spoiler alert : on parler de types.
             </p>
           </aside>
@@ -66,8 +65,8 @@
             </p>
             <p>J'ai travaillé chez Yaal et maintenant chez Sinch.</p>
             <p>
-              J'ai pas beaucoup de temps alors on passe tout de suite au sujet
-              de la présentation.
+              J'ai beaucoup de choses à vous montrer, alors on passe tout de
+              suite au sujet de la présentation.
             </p>
           </aside>
         </section>
@@ -102,16 +101,19 @@
           </div>
           <aside class="notes">
             <p>
-              Je vais vous parler du mantra "Parse, don’t validate" expliqué
-              dans cet article de Alexis King. Après avoir lu cet article, je me
-              rends compte que beaucoup de bugs ou d'erreurs que je vois au
-              quotidien peuvent être évités et on va voir comment.
+              Je vais vous parler de cet article de Alexis King qui a trouvé un
+              slogan simple et percutant pour résumer le type-driven design :
+              "Parse, don’t validate".
+            </p>
+            <p>
+              Après avoir lu cet article, je me suis rendu compte que beaucoup
+              de bugs ou d'erreurs que je vois au quotidien peuvent être évités
+              et on va voir comment.
             </p>
             <p>
               L'article est illustré par un exemple concret en Haskell. Je vais
               vous présenter cet exemple dans un langage plus connus: Python.
             </p>
-            <p>On commence tout de suite avec du code, soyez attentifs !</p>
           </aside>
         </section>
 
@@ -119,6 +121,12 @@
           <p class="text-with-animated-background">
             Ce n'est pas le moment de vous endormir.
           </p>
+          <aside class="notes">
+            <p>
+              Ce n'est pas le moment de s'endormir, on va voir du code, soyez
+              attentifs !
+            </p>
+          </aside>
         </section>
 
         <section>
@@ -148,7 +156,7 @@
               On commence simple avec une fonction qui retourne le premier
               élément d'une séquence.
             </p>
-            <p>Qu'est-ce qui pourrait mal se passer ?</p>
+            <p>À votre avis, qu'est-ce qui pourrait mal se passer ?</p>
             <p><strong>NEXT</strong> Une séquence vide provoque une erreur.</p>
             <p>
               Le problème est que la fonction est partielle.
@@ -290,11 +298,12 @@
                 main()
           </code></pre>
           <aside class="notes">
-            <p>D'après vous, qu'est-ce qui ne va pas dans cette solution ?</p>
             <p>
-              On doit vérifier la valeur de retour de <code>head</code> à chaque
-              fois qu'on l'utilise.
+              On va initialiser un cache sur le premier répertoire d'une liste
+              venant d'une variable d'environnement.
             </p>
+            <p>…</p>
+            <p>D'après vous, qu'est-ce qui ne va pas dans cette solution ?</p>
           </aside>
         </section>
 
