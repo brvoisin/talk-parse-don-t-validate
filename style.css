@@ -31,6 +31,23 @@
   --r-heading1-size: 2em;
   --r-heading2-size: 1.8em;
   --r-heading3-size: 1.3em;
+  --background-color-opacity: 40%;
+  /* Color palette: https://colorhunt.co/palette/0079ff00dfa2f6fa70ff0060 */
+  --title-background-gradient: radial-gradient(
+      circle at 50% 0,
+      rgb(255 0 96 / var(--background-color-opacity)),
+      transparent 70.71%
+    ),
+    radial-gradient(
+      circle at 5% 80%,
+      rgb(0 121 255 / var(--background-color-opacity)),
+      transparent 70.71%
+    ),
+    radial-gradient(
+      circle at 95% 65%,
+      rgb(0 253 162 / var(--background-color-opacity)),
+      transparent 70.71%
+    );
 }
 
 .reveal .progress {
