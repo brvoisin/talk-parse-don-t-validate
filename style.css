@@ -169,6 +169,11 @@ strong {
   font-weight: normal;
 }
 
+.reveal .text-with-animated-background {
+  color: var(--r-background-color);
+  text-shadow: var(--r-main-color) 0 0 5px;
+}
+
 pre:has(+ .output) {
   margin-bottom: 0.1em;
 }
