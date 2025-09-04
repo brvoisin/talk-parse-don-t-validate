@@ -1,6 +1,6 @@
 @import "reveal.js/dist/reset.css";
 @import "reveal.js/dist/reveal.css";
-@import "reveal.js/dist/theme/simple.css";
+@import "reveal.js/dist/theme/white.css";
 @import "assets/css/monokai-sublime.css";
 
 .reveal pre code.hljs {
@@ -16,13 +16,25 @@
   font-family: "Atkinson Hyperlegible Bold";
   src: url("assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
 }
+@font-face {
+  font-family: "Atkinson Hyperlegible Italic";
+  src: url("assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2")
+    format("woff2");
+}
 
 :root {
   --r-main-font: "Atkinson Hyperlegible Regular";
+  --r-main-font-size: 40px;
   --r-heading-font: "Atkinson Hyperlegible Bold";
+  --r-heading-font-weight: normal;
+  --r-heading-text-transform: inherit;
   --r-heading1-size: 2em;
   --r-heading2-size: 1.8em;
   --r-heading3-size: 1.3em;
+}
+
+.reveal .progress {
+  height: 5px;
 }
 
 h1.title {
@@ -30,6 +42,7 @@ h1.title {
 }
 
 p.subtitle {
+  font-family: "Atkinson Hyperlegible Italic";
   font-size: 0.9em;
   margin-bottom: 2em;
 }
@@ -133,8 +146,8 @@ a.discret {
 .preview {
   width: 60%;
   margin: auto;
-  border: 3px solid
-    color-mix(in srgb, var(--r-link-color) 30%, var(--r-background-color));
+  border: 5px solid
+    color-mix(in srgb, var(--r-link-color) 50%, var(--r-background-color));
   border-radius: 10px;
   font-size: 0.7em;
   text-align: justify;
