@@ -550,7 +550,7 @@
           <p>Envoi d'un message à un numéro de téléphone</p>
           <pre
             data-id="phone-number"
-          ><code data-trim data-line-numbers="|1-2|5-8" class="language-python">
+          ><code data-trim data-line-numbers="|1-2|5-8" data-fragment-index="0" class="language-python">
             def validate_phone_number(text: str) -> bool:
                 return len(text) == 10 and text.isdigit()
 
@@ -560,6 +560,10 @@
                     raise ValueError("Invalid phone number")
                 print(f"Sending message to {phone_number}: {message}")
           </code></pre>
+          <p class="fragment" data-fragment-index="1">
+            Le numéro de téléphone est une chaîne de caractères, par précaution
+            on vérifie son format à chaque envoi.
+          </p>
         </section>
 
         <section data-auto-animate>
@@ -567,7 +571,7 @@
           <p>Envoi d'un message à un numéro de téléphone</p>
           <pre
             data-id="phone-number"
-          ><code data-trim data-line-numbers="|6-9|12-15" class="language-python">
+          ><code data-trim data-line-numbers="|6-9|12-15" data-fragment-index="0" class="language-python">
             from typing import NewType
 
             ValidPhoneNumber = NewType("ValidPhoneNumber", str)
@@ -584,6 +588,10 @@
             ) -> None:
                 print(f"Sending message to {phone_number}: {message}")
           </code></pre>
+          <p class="fragment" data-fragment-index="1">
+            Le type indique que le numéro est valide, plus besoin de vérifier
+            son format à chaque envoi.
+          </p>
         </section>
 
         <section data-auto-animate>
