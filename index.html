@@ -447,94 +447,29 @@
         <section>
           <div class="columnContainer">
             <div class="column">
-              <p>Solution 1</p>
-              <pre><code data-trim data-line-numbers="|6-9|12,19-20|24-33" class="language-python" data-fragment-index="0">
-                import os
-                from collections.abc import Sequence
-                from pathlib import Path
-
-
-                def head[T](seq: Sequence[T]) -> T | None:
-                    if not seq:
-                        return None
-                    return seq[0]
-
-
-                def get_config_directories() -> Sequence[Path]:
-                    config_dirs_string = os.getenv("CONFIG_DIRS", "")
-                    config_dirs = [
-                        Path(dir)
-                        for dir in config_dirs_string.split(",")
-                        if dir
-                    ]
-                    if not config_dirs:
-                        raise ValueError("CONFIG_DIRS cannot be empty")
-                    return config_dirs
-
-
-                def main() -> None:
-                    config_dirs = get_config_directories()
-                    match head(config_dirs):
-                        case None:
-                            raise ValueError(
-                                "should never happen; "
-                                "already checked config_dirs is non-empty"
-                            )
-                        case cache_dir:
-                            initialize_cache(cache_dir)
-
-
-                def initialize_cache(cache_dir: Path) -> None: ...
-
-
-                if __name__ == "__main__":
-                    main()
-              </code></pre>
+              <h2>Solution 1</h2>
+              <p>
+                Gérer la séquence vide<br />
+                en retournant <code>None</code>
+              </p>
+              <ul>
+                <li>
+                  😮‍💨 Vérifications redondantes<br />
+                  <small>(avec un coût de performance potentiel)</small>
+                </li>
+                <li>🐛 Un bug est probable à l'avenir</li>
+              </ul>
             </div>
             <div class="column">
-              <p>Solution 2</p>
-              <pre><code data-trim data-line-numbers="|9-10|13,20-21,25-28|31-33" class="language-python" data-fragment-index="0">
-                import os
-                from pathlib import Path
-                from typing import TypeGuard, TypeVar, Unpack
-
-                T = TypeVar("T")
-                NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
-
-
-                def head(seq: NonEmptyTuple[T]) -> T:
-                    return seq[0]
-
-
-                def get_config_directories() -> NonEmptyTuple[Path]:
-                    config_dirs_string = os.getenv("CONFIG_DIRS", "")
-                    config_dirs = tuple(
-                        Path(dir)
-                        for dir in config_dirs_string.split(",")
-                        if dir
-                    )
-                    if not is_non_empty(config_dirs):
-                        raise ValueError("CONFIG_DIRS cannot be empty")
-                    return config_dirs
-
-
-                def is_non_empty(
-                    seq: tuple[T, ...]
-                ) -> TypeGuard[NonEmptyTuple[T]]:
-                    return len(seq) > 0
-
-
-                def main() -> None:
-                    config_dirs = get_config_directories()
-                    initialize_cache(head(config_dirs))
-
-
-                def initialize_cache(cache_dir: Path) -> None: ...
-
-
-                if __name__ == "__main__":
-                    main()
-              </code></pre>
+              <h2>Solution 2</h2>
+              <p>
+                Interdire la séquence vide<br />
+                avec un <strong>nouveau type</strong> ✨
+              </p>
+              <ul>
+                <li style="margin-bottom: 1.35em">🙂 Une seule vérification</li>
+                <li>✅ Le typage empêche des erreurs</li>
+              </ul>
             </div>
           </div>
         </section>
