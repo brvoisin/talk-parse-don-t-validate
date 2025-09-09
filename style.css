@@ -171,16 +171,27 @@ a.discret {
   mask-image: url("assets/images/clock.svg");
 }
 
+/* Gradient border with radius:
+https://dev.to/afif/border-with-gradient-and-radius-387f */
 .preview {
+  position: relative;
   width: 60%;
   margin: auto;
-  border: 5px solid
-    color-mix(in srgb, var(--r-link-color) 50%, var(--r-background-color));
-  border-radius: 10px;
   font-size: 0.7em;
   text-align: justify;
-  padding: 1em;
-  box-shadow: 7px 10px 10px rgba(0, 0, 0, 0.15);
+  padding: 1.2em;
+  border-radius: 1em;
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
+}
+.preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1em;
+  padding: 10px;
+  background: var(--title-background-gradient);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
 .preview .link {
   font-size: 0.7em;
