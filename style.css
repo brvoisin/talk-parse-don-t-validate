@@ -56,12 +56,23 @@
 
 h1.title {
   margin-bottom: 0.5em;
+  text-shadow: var(--r-background-color) 0 0 10px;
 }
-
+.speaker {
+  letter-spacing: 0.1em;
+}
+.event {
+  letter-spacing: 0.05em;
+}
 p.subtitle {
   font-family: "Atkinson Hyperlegible Italic";
   font-size: 0.9em;
   margin-bottom: 2em;
+}
+.subtitle,
+.speaker,
+.event {
+  text-shadow: var(--r-background-color) 0 0 4px;
 }
 
 .small {
