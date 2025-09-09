@@ -401,7 +401,15 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
-          <aside class="notes"></aside>
+          <aside class="notes">
+            <p>
+              On imagine que quelqu'un modifie cette fonction et oublie de
+              mettre à jour <code>main</code>. Ici le code est simple et tient
+              dans la tête d'un développeur, mais dans un vrai projet, la
+              fonction qui vérifie les données peut être très loin de celle qui
+              les utilise.
+            </p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -447,8 +455,18 @@
                 main()
           </code></pre>
           <aside class="notes">
+            <p>La vérification est supprimée.</p>
+            <p>
+              <strong>NEXT</strong>
+              Le cas qui ne devait jamais arriver devient possible. Selon la loi
+              de Murphy,
+              <i>tout ce qui est susceptible d'aller mal ira mal</i>. L'erreur
+              peut arriver que bien plus tard (dans 3 mois, 1 an ou plus) quand
+              tout le monde aura oublié les changements qui ont mené à ce bug.
+            </p>
             <p>Comment on peut éviter ce problème ?</p>
             <p>
+              <strong>NEXT</strong>
               Plutôt que d'agir sur la valeur de retour, on va contraindre la
               valeur d'entrée.
             </p>
