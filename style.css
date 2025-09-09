@@ -253,12 +253,21 @@ pre + .output {
   text-decoration: line-through;
 }
 
+.slides-link {
+  position: relative;
+  z-index: -2; /* behind the QR code image to make the link work */
+}
 .slides-link p {
   font-size: 0.8em;
   margin-bottom: 0;
 }
 .slides-link img {
   margin-top: 0;
+  background-color: white;
+  box-shadow: 0 0 100px 100px white;
+  border-radius: 30%;
+  position: relative;
+  z-index: -1; /* shadow behind surrounding texts */
 }
 
 .powered-by {
