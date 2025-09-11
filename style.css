@@ -215,6 +215,15 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   content: "—";
   padding-right: 0.3em;
 }
+.preview img.portrait {
+  width: 4em;
+  margin: 0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.9em;
+  right: 1.5em;
+  z-index: -1;
+}
 
 strong {
   font-family: "Atkinson Hyperlegible Bold";
