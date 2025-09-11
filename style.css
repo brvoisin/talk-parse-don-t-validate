@@ -236,6 +236,12 @@ section[data-background-image] h2 {
   text-shadow: var(--r-main-color) 0 0 5px;
 }
 
+img.mypy-logo {
+  height: 0.94em;
+  margin: 0;
+  vertical-align: sub;
+}
+
 pre:has(+ .output) {
   margin-bottom: 0.1em;
 }
