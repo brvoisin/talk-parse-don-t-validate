@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Et si on évitait les bugs avant même d'exécuter le code ?</title>
+    <title>Et si on évitait les bugs avant même d’exécuter le code ?</title>
   </head>
 
   <body>
@@ -12,7 +12,7 @@
       <div class="slides">
         <section data-background-gradient="var(--title-background-gradient)">
           <h1 class="title">
-            Et si on évitait les bugs avant même d'exécuter le code ?
+            Et si on évitait les bugs avant même d’exécuter le code ?
           </h1>
           <p class="subtitle">Utilisez pleinement la puissance des types</p>
           <p class="speaker">Bruno Voisin</p>
@@ -37,7 +37,7 @@
                   </a>
                 </li>
                 <li class="position">Senior Software Engineer</li>
-                <li class="experience">13 ans d'expérience en développement</li>
+                <li class="experience">13 ans d’expérience en développement</li>
               </ul>
             </div>
           </div>
@@ -80,11 +80,16 @@
               </p>
             </div>
             <div class="author">Alexis King</div>
+            <img
+              class="portrait"
+              src="assets/images/alexis-king.jpg"
+              alt="Alexis King"
+            />
           </div>
         </section>
 
         <section data-background-image="cat-falls-asleep.webp">
-          <p>Ce n'est pas le moment de vous endormir.</p>
+          <p>Ce n’est pas le moment de vous endormir.</p>
         </section>
 
         <section>
@@ -173,8 +178,8 @@
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
           <p class="small">
-            Cas d'utilisation :<br />
-            initialisation d'un cache sur le premier répertoire de
+            Cas d’utilisation :<br />
+            initialisation d’un cache sur le premier répertoire de
             configuration.
           </p>
           <pre
@@ -232,7 +237,7 @@
               📈 Coût de performance sur des cas plus complexes
             </li>
             <li class="fragment">
-              🐛 <strong>Un bug est probable à l'avenir</strong> : la fonction
+              🐛 <strong>Un bug est probable à l’avenir</strong> : la fonction
               <code>get_config_directories</code> pourrait arrêter de vérifier
               que la liste est vide et le cas impossible devient probable.
             </li>
@@ -319,7 +324,7 @@
                 config_dirs = get_config_directories()
                 match head(config_dirs):
                     case None:
-                        raise ValueError("Hello! I'm a new bug!")
+                        raise ValueError("Hello! I’m a new bug!")
                     case cache_dir:
                         initialize_cache(cache_dir)
 
@@ -392,8 +397,8 @@
         <section data-auto-animate>
           <h3>Solution 2 : interdire la séquence vide</h3>
           <p class="small">
-            Cas d'utilisation :<br />
-            initialisation d'un cache sur le premier répertoire de
+            Cas d’utilisation :<br />
+            initialisation d’un cache sur le premier répertoire de
             configuration.
           </p>
           <pre
@@ -455,7 +460,7 @@
                   😮‍💨 Vérifications redondantes<br />
                   <small>(avec un coût de performance potentiel)</small>
                 </li>
-                <li>🐛 Un bug est probable à l'avenir</li>
+                <li>🐛 Un bug est probable à l’avenir</li>
               </ul>
             </div>
             <div class="column">
@@ -473,13 +478,13 @@
         </section>
 
         <section data-auto-animate data-background-image="obama-wtf.gif">
-          <h2 class="r-fit-text">Parse, don't validate</h2>
+          <h2 class="r-fit-text">Parse, don’t validate</h2>
           <p>Quel est le rapport ?</p>
         </section>
 
         <section data-auto-animate>
-          <h2><span class="erased">Parse, don't</span> validate</h2>
-          <p>Envoi d'un message à un numéro de téléphone</p>
+          <h2><span class="erased">Parse, don’t</span> validate</h2>
+          <p>Envoi d’un message à un numéro de téléphone</p>
           <pre
             data-id="phone-number"
           ><code data-trim data-line-numbers="|1-2|5-8" data-fragment-index="0" class="language-python">
@@ -499,8 +504,8 @@
         </section>
 
         <section data-auto-animate>
-          <h2><strong>Parse</strong>, don't validate</h2>
-          <p>Envoi d'un message à un numéro de téléphone</p>
+          <h2><strong>Parse</strong>, don’t validate</h2>
+          <p>Envoi d’un message à un numéro de téléphone</p>
           <pre
             data-id="phone-number"
           ><code data-trim data-line-numbers="|6-9|12-15" data-fragment-index="0" class="language-python">
@@ -527,14 +532,14 @@
         </section>
 
         <section data-auto-animate>
-          <h2>Parse, don't validate</h2>
+          <h2>Parse, don’t validate</h2>
           <ul>
-            <li>Validez qu'une fois vos données</li>
+            <li>Validez qu’une fois vos données</li>
             <li>
-              Conservez l'information avec des types<br />
+              Conservez l’information avec des types<br />
               <span class="small">(stop à la primitive obsession)</span>
             </li>
-            <li>Évitez des bugs grâce à l'analyse statique des types</li>
+            <li>Évitez des bugs grâce à l’analyse statique des types</li>
           </ul>
         </section>
 
