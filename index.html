@@ -682,16 +682,37 @@
         <section data-auto-animate>
           <h2>Parse, don’t validate</h2>
           <ul>
-            <li class="fragment">Validez qu’une fois vos données</li>
+            <li class="fragment">Validez qu’une fois vos données à l'entrée</li>
             <li class="fragment">
               Conservez l’information avec des types<br />
               <span class="small">(stop à la primitive obsession)</span>
             </li>
             <li class="fragment">
-              Évitez des bugs grâce à l’analyse statique des types
-              <span class="small">(avant d’exécuter le code)</span>
+              Des bugs évités grâce au typage avant même d’exécuter le code<br />
+              <span class="small"
+                >(IDE, compilation ou analyse statique de code)</span
+              >
             </li>
           </ul>
+          <aside class="notes">
+            <p>
+              Pour conclure, validez qu'une fois vos données à l'entrée. Vous
+              éviterez des erreurs au milieu d'un traitement qui pourrait avoir
+              fait des effets de bord avant une exception.
+            </p>
+            <p>
+              Conservez l'information avec des types. Typez les données de votre
+              domaine métier pour le rendre plus clair.<br />
+              Arrêtez la primitive obsession, c'est-à-dire d'utiliser des types
+              seulement primitifs de votre langage. Créez des types spécifiques
+              à votre domaine.
+            </p>
+            <p>
+              Vous éviterez ainsi des bugs avant même d'exécuter le code grâce
+              au typage. Vous aurez un retour immédiat par votre IDE, ou lors de
+              la compilation ou l'analyse statique de code.
+            </p>
+          </aside>
         </section>
 
         <section data-background-gradient="var(--title-background-gradient)">
