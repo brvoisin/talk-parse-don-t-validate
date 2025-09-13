@@ -324,18 +324,18 @@
 
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
-          <h4>Les problèmes</h4>
-          <ol>
-            <li class="fragment">😮‍💨 Vérifications redondantes</li>
+          <p>Les problèmes</p>
+          <ul class="solution-1-problems">
             <li class="fragment">
-              📈 Coût de performance sur des cas plus complexes
+              😮‍💨 Vérifications redondantes<br />
+              <ul class="small arrow-list">
+                <li>potentielle dégradation de la performance</li>
+              </ul>
             </li>
             <li class="fragment">
-              🐛 <strong>Un bug est probable à l’avenir</strong> : la fonction
-              <code>get_config_directories</code> pourrait arrêter de vérifier
-              que la liste est vide et le cas impossible devient probable.
+              🐛 <strong>Un bug est probable à l’avenir</strong>
             </li>
-          </ol>
+          </ul>
           <aside class="notes">
             <p>
               La première chose qui saute aux yeux, ce sont les vérifications
