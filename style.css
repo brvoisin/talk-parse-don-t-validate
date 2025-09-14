@@ -1,95 +1,83 @@
 @import "reveal.js/dist/reset.css";
 @import "reveal.js/dist/reveal.css";
-@import "reveal.js/dist/theme/white.css";
+@import "assets/css/robot-lung.css";
 @import "assets/css/monokai-sublime.css";
 
 .reveal pre code.hljs {
   padding: 5px;
 }
 
-@font-face {
-  font-family: "Atkinson Hyperlegible Regular";
-  src: url("assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2")
-    format("woff2");
-}
-@font-face {
-  font-family: "Atkinson Hyperlegible Bold";
-  src: url("assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Atkinson Hyperlegible Italic";
-  src: url("assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2")
-    format("woff2");
-}
-
 :root {
-  --r-main-font: "Atkinson Hyperlegible Regular";
-  --r-main-font-size: 40px;
-  --r-heading-font: "Atkinson Hyperlegible Bold";
-  --r-heading-font-weight: normal;
-  --r-heading-text-transform: inherit;
-  --r-heading1-size: 2em;
-  --r-heading2-size: 1.8em;
-  --r-heading3-size: 1.3em;
-  --background-color-opacity: 40%;
   /*
-  Color palette: https://colorhunt.co/palette/0079ff00dfa2f6fa70ff0060
+  Color palette: https://colorhunt.co/palette/476eae48b3afa7e399f6ff99
   */
-  --color-1: rgb(255 0 96);
-  --color-2: rgb(0 121 255);
-  --color-3: rgb(0 253 162);
-  --title-background-gradient: radial-gradient(
-      circle at 50% 0,
-      color-mix(
-        in srgb,
-        var(--color-1) var(--background-color-opacity),
-        transparent
-      ),
-      transparent 70.71%
-    ),
-    radial-gradient(
-      circle at 5% 80%,
-      color-mix(
-        in srgb,
-        var(--color-2) var(--background-color-opacity),
-        transparent
-      ),
-      transparent 70.71%
-    ),
-    radial-gradient(
-      circle at 95% 65%,
-      color-mix(
-        in srgb,
-        var(--color-3) var(--background-color-opacity),
-        transparent
-      ),
-      transparent 70.71%
-    );
-  --all-slides-background: radial-gradient(
-      ellipse at 50% 50%,
-      white 30%,
-      transparent
-    ),
-    var(--title-background-gradient);
-  --title-text-shadow-color: color-mix(
-    in srgb,
-    var(--r-background-color) 50%,
-    transparent
-  );
-  --title-text-shadow: var(--title-text-shadow-color) 0.01em 0.01em 0,
-    var(--title-text-shadow-color) 0.02em 0.02em 0,
-    var(--title-text-shadow-color) 0.03em 0.03em 0,
-    var(--title-text-shadow-color) 0.04em 0.04em 0,
-    var(--title-text-shadow-color) 0.05em 0.05em 1px;
+  --color-1: #476eae;
+  --color-2: #48b3af;
+  --r-main-color: black;
+  --r-link-color: var(--color-1);
+  --r-link-color-hover: var(--color-2);
+  --r-image-link-color: color-mix(in srgb, var(--color-2), transparent 80%);
 }
 
+/* Theme overrides */
+::selection,
+::-moz-selection {
+  background-color: var(--color-2);
+}
+.reveal section {
+  font-size: 1.2em;
+}
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.reveal a:hover img {
+  background-color: var(--r-image-link-color);
+  border-color: none;
+  box-shadow: 0 0 10px 10px var(--r-image-link-color);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: inherit;
+}
+.reveal h2 {
+  font-size: 1.9em;
+}
+.reveal h3 {
+  font-size: 1.48em;
+}
+.line.top {
+  background: var(--color-1);
+}
+.line.left,
+.line.right {
+  background: linear-gradient(var(--color-1) 10%, var(--color-2) 50%);
+}
+.line.bottom {
+  background: var(--color-2);
+}
+.reveal a,
+.reveal .controls {
+  color: var(--r-link-color);
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-decoration: underline;
+}
 .reveal .progress {
+  color: var(--r-link-color);
   height: 5px;
 }
+/* Theme overrides end */
 
 h1.title {
   margin-bottom: 0.5em;
-  text-shadow: var(--title-text-shadow);
 }
 .speaker {
   font-weight: bold;
@@ -99,14 +87,9 @@ h1.title {
   letter-spacing: 0.02em;
 }
 p.subtitle {
-  font-family: "Atkinson Hyperlegible Italic";
+  font-style: italic;
   font-size: 0.9em;
   margin-bottom: 2em;
-}
-.subtitle,
-.speaker,
-.event {
-  text-shadow: var(--title-text-shadow);
 }
 img.crafts-records {
   height: 3em;
@@ -171,7 +154,7 @@ a.discret {
   padding-left: 1em;
 }
 .speaker-card .info .name {
-  font-family: "Atkinson Hyperlegible Bold";
+  font-weight: bold;
   font-size: 1.2em;
 }
 .speaker-card .info ul {
@@ -227,7 +210,7 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   inset: 0;
   border-radius: 1em;
   padding: 10px;
-  background: var(--title-background-gradient);
+  background: linear-gradient(var(--color-1) 5%, var(--color-2) 95%);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
 }
@@ -240,7 +223,7 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   padding-right: 0.2em;
 }
 .preview .title {
-  font-family: "Atkinson Hyperlegible Bold";
+  font-weight: bold;
   font-size: 1.8em;
 }
 .preview .description {
@@ -263,11 +246,6 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   z-index: -1;
 }
 
-strong {
-  font-family: "Atkinson Hyperlegible Bold";
-  font-weight: normal;
-}
-
 section[data-background-image],
 section[data-background-image] h2 {
   color: white;
@@ -288,7 +266,7 @@ ul.arrow-list li::before {
   margin-right: 0.5em;
 }
 
-img.mypy-logo {
+.reveal section img.mypy-logo {
   height: 0.94em;
   margin: 0;
   vertical-align: sub;
@@ -316,9 +294,9 @@ pre + .output {
 }
 .column {
   flex: 1;
-  font-size: 0.8em;
   border-right: var(--r-main-color) 2px solid;
-  padding: 2em 1em;
+  padding: 2em 0.8em;
+  font-size: 0.81em;
 }
 .column:first-child {
   padding-left: 0;
@@ -328,7 +306,7 @@ pre + .output {
   padding-right: 0;
 }
 .heading {
-  font-size: 1.15em;
+  font-size: 1.21em;
 }
 
 .erased {
@@ -360,8 +338,8 @@ pre + .output {
   align-items: center;
   justify-content: center;
 }
-.powered-by img,
-.sources img {
+.reveal section .powered-by img,
+.reveal section .sources img {
   margin: 0 0 0 0.4em;
 }
 .powered-by img {
@@ -370,6 +348,6 @@ pre + .output {
 .sources img {
   height: 1.5em;
 }
-.sources img + img {
+.reveal section .sources img + img {
   margin-left: 0;
 }
