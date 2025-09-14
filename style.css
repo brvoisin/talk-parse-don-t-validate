@@ -32,22 +32,45 @@
   --r-heading2-size: 1.8em;
   --r-heading3-size: 1.3em;
   --background-color-opacity: 40%;
-  /* Color palette: https://colorhunt.co/palette/0079ff00dfa2f6fa70ff0060 */
+  /*
+  Color palette: https://colorhunt.co/palette/0079ff00dfa2f6fa70ff0060
+  */
+  --color-1: rgb(255 0 96);
+  --color-2: rgb(0 121 255);
+  --color-3: rgb(0 253 162);
   --title-background-gradient: radial-gradient(
       circle at 50% 0,
-      rgb(255 0 96 / var(--background-color-opacity)),
+      color-mix(
+        in srgb,
+        var(--color-1) var(--background-color-opacity),
+        transparent
+      ),
       transparent 70.71%
     ),
     radial-gradient(
       circle at 5% 80%,
-      rgb(0 121 255 / var(--background-color-opacity)),
+      color-mix(
+        in srgb,
+        var(--color-2) var(--background-color-opacity),
+        transparent
+      ),
       transparent 70.71%
     ),
     radial-gradient(
       circle at 95% 65%,
-      rgb(0 253 162 / var(--background-color-opacity)),
+      color-mix(
+        in srgb,
+        var(--color-3) var(--background-color-opacity),
+        transparent
+      ),
       transparent 70.71%
     );
+  --all-slides-background: radial-gradient(
+      ellipse at 50% 50%,
+      white 30%,
+      transparent
+    ),
+    var(--title-background-gradient);
 }
 
 .reveal .progress {
