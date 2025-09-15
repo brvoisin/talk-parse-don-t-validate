@@ -348,16 +348,23 @@ pre + .output {
   z-index: -1; /* shadow behind surrounding texts */
 }
 
-.powered-by {
+.powered-by,
+.sources {
   font-size: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-p.powered-by {
-  margin-top: 0;
+.powered-by img,
+.sources img {
+  margin: 0 0 0 0.4em;
 }
 .powered-by img {
   height: 2em;
-  margin-left: 0.4em;
+}
+.sources img {
+  height: 1.5em;
+}
+.sources img + img {
+  margin-left: 0;
 }
