@@ -92,7 +92,8 @@ h1.title {
   text-shadow: var(--title-text-shadow);
 }
 .speaker {
-  letter-spacing: 0.1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 .event {
   letter-spacing: 0.02em;
