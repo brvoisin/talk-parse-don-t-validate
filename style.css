@@ -71,6 +71,16 @@
       transparent
     ),
     var(--title-background-gradient);
+  --title-text-shadow-color: color-mix(
+    in srgb,
+    var(--r-background-color) 50%,
+    transparent
+  );
+  --title-text-shadow: var(--title-text-shadow-color) 0.01em 0.01em 0,
+    var(--title-text-shadow-color) 0.02em 0.02em 0,
+    var(--title-text-shadow-color) 0.03em 0.03em 0,
+    var(--title-text-shadow-color) 0.04em 0.04em 0,
+    var(--title-text-shadow-color) 0.05em 0.05em 1px;
 }
 
 .reveal .progress {
@@ -79,7 +89,7 @@
 
 h1.title {
   margin-bottom: 0.5em;
-  text-shadow: var(--r-background-color) 0 0 10px;
+  text-shadow: var(--title-text-shadow);
 }
 .speaker {
   letter-spacing: 0.1em;
@@ -95,7 +105,7 @@ p.subtitle {
 .subtitle,
 .speaker,
 .event {
-  text-shadow: var(--r-background-color) 0 0 4px;
+  text-shadow: var(--title-text-shadow);
 }
 
 .small {
