@@ -255,8 +255,8 @@ strong {
 
 section[data-background-image],
 section[data-background-image] h2 {
-  color: var(--r-background-color);
-  text-shadow: var(--r-main-color) 0 0 5px;
+  color: white;
+  text-shadow: black 0 0 5px;
 }
 
 .solution-1-problems li {
