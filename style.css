@@ -9,10 +9,12 @@
 
 :root {
   /*
-  Color palette: https://colorhunt.co/palette/476eae48b3afa7e399f6ff99
+  Color palettes:
+  https://colorhunt.co/palette/476eae48b3afa7e399f6ff99
+  https://colorhunt.co/palette/201e43134b70508c9beeeeee
   */
   --color-1: #476eae;
-  --color-2: #48b3af;
+  --color-2: #508c9b;
   --r-main-color: black;
   --r-link-color: var(--color-1);
   --r-link-color-hover: var(--color-2);
