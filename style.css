@@ -202,16 +202,7 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
-}
-.preview::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 1em;
-  padding: 10px;
-  background: linear-gradient(var(--color-1) 5%, var(--color-2) 95%);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  border: 0.2em solid color-mix(in srgb, var(--color-2), transparent 45%);
 }
 .preview .link {
   font-size: 0.7em;
