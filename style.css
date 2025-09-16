@@ -221,18 +221,15 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
 }
 .preview .author {
   font-size: 1.1em;
-}
-.preview .author::before {
-  content: "—";
-  padding-right: 0.3em;
+  text-align: right;
 }
 .preview img.portrait {
-  width: 4em;
+  width: 2.8em;
   margin: 0;
   border-radius: 50%;
   position: absolute;
-  bottom: 0.7em;
-  right: 1.3em;
+  bottom: 0.85em;
+  right: 8em;
   z-index: -1;
 }
 
