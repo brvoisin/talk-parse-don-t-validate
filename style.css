@@ -303,6 +303,14 @@ pre + .output {
   text-decoration: line-through;
 }
 
+.conclusion h1 {
+  margin-bottom: 0.5em;
+}
+.conclusion ul li {
+  margin-bottom: 0.6em;
+  font-size: 1.15em;
+}
+
 .slides-link {
   position: relative;
   z-index: -2; /* behind the QR code image to make the link work */
