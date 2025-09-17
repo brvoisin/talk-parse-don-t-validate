@@ -126,16 +126,19 @@
           </div>
           <aside class="notes">
             <p>
-              Je vais vous parler de cet article de Alexis King qui a trouvé un
-              slogan simple et percutant pour résumer le type-driven design :
-              "Parse, don’t validate".
+              Le sujet de cette présentation vient de cet article qui m'a
+              beaucoup marqué.
             </p>
             <p>
-              Après avoir lu cet article, j'utilise cette approche et je me suis
-              rendu compte que beaucoup de bugs ou d'erreurs que je vois au
-              quotidien peuvent être évités et on va voir comment. J'espère que
-              vous aussi, après cette présentation, vous changerez votre façon
-              de coder pour produire du code de meilleure qualité.
+              Alexis King qui a trouvé le slogan "Parse, don’t validate" pour
+              résumer le type-driven design.
+            </p>
+            <p>
+              Depuis, j'utilise cette approche et je me suis rendu compte que
+              beaucoup de bugs ou d'erreurs que je vois au quotidien peuvent
+              être évités et on va voir comment. J'espère que vous aussi vous
+              changerez votre façon de coder pour produire du code de meilleure
+              qualité.
             </p>
             <p>
               L'article est illustré par un exemple concret en Haskell. Je vais
@@ -241,8 +244,8 @@
               séquence est vide.
             </p>
             <p>
-              <strong>NEXT</strong> En exécutant ce code on voit que ça marche.
-              Il n'y a plus d'erreur.
+              <strong>NEXT</strong> En exécutant ce code on voit qu'il n'y a
+              plus d'erreur. On obtient None en passant une liste vide.
             </p>
             <p>
               Maintenant, on va utiliser cette fonction dans un exemple concret.
@@ -332,11 +335,17 @@
           </code></pre>
           <aside class="notes">
             <p>
-              On va initialiser un cache sur le premier répertoire d'une liste
-              venant d'une variable d'environnement.
+              On va utiliser head pour obtenir le premier élément d'une liste de
+              répertoires de configuration venant d'une variable
+              d'environnement.
             </p>
             <p>…</p>
-            <p>D'après vous, qu'est-ce qui ne va pas dans cette solution ?</p>
+            <p>
+              Cas impossible géré pour comparer avec la solution 2 et pour le
+              typage.
+            </p>
+            <p>…</p>
+            <p>Alors qu'est-ce qui ne va pas dans cette solution ?</p>
           </aside>
         </section>
 
@@ -361,17 +370,13 @@
               <code>head</code> à chaque fois qu'on l'utilise.
             </p>
             <p>
-              Ensuite, une implication du point précédent est qu'il peut y avoir
-              un coût de performance sur des cas plus complexes. Notre exemple
-              est trivial, mais on pourrait imaginer des vérifications
-              redondantes qui demandent du temps surtout si elles sont dans des
-              boucles.
+              Dans des cas plus complexes, cette répétition pourrait dégrader la
+              performance de l'application, surtout si la vérification est faite
+              dans une boucle.
             </p>
             <p>
-              Enfin, le point le plus important est qu'un bug est probable à
-              l'avenir. Si quelqu'un modifie la fonction
-              <code>get_config_directories</code> et oublie de modifier
-              également <code>main</code>, le cas impossible devient probable.
+              Mais le point le plus important est qu'un bug est probable à
+              l'avenir. Voyons ça ensemble.
             </p>
           </aside>
         </section>
@@ -424,11 +429,13 @@
                 main()
           </code></pre>
           <aside class="notes">
+            <p>Revenons sur notre code avec cette duplication.</p>
             <p>
-              On imagine que quelqu'un modifie cette fonction et oublie de
-              mettre à jour <code>main</code>. Ici le code est simple et tient
-              dans la tête, mais dans un vrai projet, la fonction qui vérifie
-              les données peut être très loin de celle qui les utilise.
+              <strong>NEXT</strong> On imagine que quelqu'un modifie la fonction
+              qui récupère la liste de répertoires et oublie de mettre à jour
+              <code>main</code>. Ici le code est simple et tient dans la mémoire
+              vive de notre cerveau, mais dans un vrai projet, la fonction qui
+              vérifie les données peut être très loin de celle qui les utilise.
             </p>
           </aside>
         </section>
@@ -721,8 +728,8 @@
             <p>
               Conservez l'information avec des types. Typez les données de votre
               domaine métier pour le rendre plus clair.<br />
-              Arrêtez la primitive obsession, c'est-à-dire d'utiliser des types
-              seulement primitifs de votre langage. Créez des types spécifiques
+              Arrêtez la primitive obsession, c'est-à-dire d'utiliser seulement
+              les types primitifs de votre langage. Créez des types spécifiques
               à votre domaine.
             </p>
             <p>
