@@ -8,13 +8,9 @@
 }
 
 :root {
-  /*
-  Color palettes:
-  https://colorhunt.co/palette/476eae48b3afa7e399f6ff99
-  https://colorhunt.co/palette/201e43134b70508c9beeeeee
-  */
-  --color-1: #476eae;
-  --color-2: #508c9b;
+  --color-1: #2f86a6;
+  --color-2: #79d7be;
+  --color-3: #29bb89;
   --r-main-color: black;
   --r-link-color: var(--color-1);
   --r-link-color-hover: var(--color-2);
@@ -59,10 +55,14 @@
 }
 .line.left,
 .line.right {
-  background: linear-gradient(var(--color-1) 10%, var(--color-2) 50%);
+  background: linear-gradient(
+    var(--color-1) 10%,
+    var(--color-2) 25%,
+    var(--color-3) 50%
+  );
 }
 .line.bottom {
-  background: var(--color-2);
+  background: var(--color-3);
 }
 .reveal a,
 .reveal .controls {
@@ -194,8 +194,6 @@ a.discret {
   mask-image: url("assets/images/clock.svg");
 }
 
-/* Gradient border with radius:
-https://dev.to/afif/border-with-gradient-and-radius-387f */
 .preview {
   position: relative;
   width: 84%;
@@ -204,7 +202,7 @@ https://dev.to/afif/border-with-gradient-and-radius-387f */
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
-  border: 0.2em solid color-mix(in srgb, var(--color-2), transparent 45%);
+  border: 0.2em solid var(--color-2);
 }
 .preview .link {
   font-size: 0.7em;
