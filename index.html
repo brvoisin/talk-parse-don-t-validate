@@ -142,7 +142,7 @@
             </p>
             <p>
               L'article est illustré par un exemple concret en Haskell. Je vais
-              vous présenter cet exemple dans un langage plus connus: Python.
+              vous le présenter dans un langage plus connus : Python.
             </p>
           </aside>
         </section>
@@ -178,17 +178,26 @@
           </div>
           <aside class="notes">
             <p>
-              On commence simple avec une fonction qui retourne le premier
-              élément d'une séquence pour explorer le domaine des possibilités.
+              On commence avec une fonction simple qui retourne le premier
+              élément d'une séquence. Elle prend en paramètre une séquence
+              d'objects de type générique T et retourne un objet de type T.
             </p>
-            <p>À votre avis, qu'est-ce qui pourrait mal se passer ?</p>
-            <p><strong>NEXT</strong> Une séquence vide provoque une erreur.</p>
+            <p>
+              Si on considère toutes les possibilités, qu'est-ce qui pourrait
+              mal se passer ?
+            </p>
+            <p>
+              <strong>NEXT</strong> Évidemment, une séquence vide provoque une
+              erreur.
+            </p>
             <p>
               Le problème est que la fonction est partielle.<br />
               <strong>NEXT</strong>
               Toutes les entrées possibles ne sont pas prises en compte.
             </p>
-            <p>Il faudrait qu'on la transforme en fonction totale.</p>
+            <p>
+              Pour corriger, il faudrait qu'on la transforme en fonction totale.
+            </p>
           </aside>
         </section>
 
@@ -200,14 +209,16 @@
           </p>
           <aside class="notes">
             <p>
-              Une fonction totale est une fonction qui prend en compte toutes
-              les entrées possibles.
+              À l'inverse d'une fonction partielle, une fonction totale est une
+              fonction qui prend en compte toutes les entrées possibles.
             </p>
-            <p>Comment peut-on faire ça ? Des idées ?</p>
+            <p>
+              Comment peut-on transformer notre fonction en fonction totale ?
+            </p>
             <p>
               <strong>NEXT</strong>
-              Il y a deux façons de passer la fonction <code>head</code> de
-              partielle à totale.
+              Il y a deux façons de le faire, et on commence toute de suite avec
+              une solution qui parait la plus évidente.
             </p>
           </aside>
         </section>
@@ -235,9 +246,11 @@
             </code></pre>
           </div>
           <aside class="notes">
-            <p>La première est de gérer le cas de la séquence vide.</p>
             <p>
-              La fonction retourne maintenant un objet de type T ou None si la
+              Dans la solution 1, nous allons gérer le cas de la séquence vide.
+            </p>
+            <p>
+              La fonction retourne maintenant un objet de type T, ou None si la
               séquence est vide.
             </p>
             <p>
