@@ -39,13 +39,13 @@
           />
           <aside class="notes">
             <p>
-              Bonjour à tous ! 🙂 Je suis ravi d'être ici avec vous. Ensemble,
-              on va voir comment on peut éviter les bugs avant même d'exécuter
-              le code.<br />
-              Alors, pas <strong>tous</strong> les bugs évidemment, mais on va
-              pouvoir en éviter certains.
+              Salut tout le monde ! 👋 Content d’être là avec vous aujourd’hui.
+              On va voir comment éviter les bugs… avant même de lancer le
+              code.<br />
+              Bon, on ne va pas tous les éliminer (faut pas rêver 😄), mais il y
+              en a qu’on peut clairement esquiver.
             </p>
-            <p>Spoiler alert : on va parler de types.</p>
+            <p>Spoiler alert : les types vont nous aider.</p>
           </aside>
         </section>
 
@@ -83,10 +83,13 @@
           </div>
           <aside class="notes">
             <p>
-              Pour commencer, je me présente très rapidement. Je m'appelle
-              Bruno, je suis basé à Bordeaux et j'ai 13 ans d'expérience en
-              développement. J'ai travaillé principalement dans deux
-              entreprises, chez Yaal et maintenant chez Sinch.
+              Bon, avant qu’on attaque : moi c’est Bruno. Je suis basé à
+              Bordeaux, et ça fait 13 ans que je fais du dev. J’ai bossé dans
+              deux boîtes : Yaal, puis maintenant Sinch.
+            </p>
+            <p>
+              Et après tout ce temps, j’ai appris une chose : on peut devancer
+              les bugs pour gagner en fiabilite et… sérénité.
             </p>
           </aside>
         </section>
@@ -126,23 +129,19 @@
           </div>
           <aside class="notes">
             <p>
-              Le sujet de cette présentation vient de cet article qui m'a
-              beaucoup marqué.
+              Cette présentation part d’un article qui m’a marqué. Alexis King y
+              résume le type-driven design avec une idée puissante : “Parse,
+              don’t validate”.
             </p>
             <p>
-              Alexis King qui a trouvé le slogan "Parse, don’t validate" pour
-              résumer le type-driven design.
+              Depuis, j’applique cette approche, et franchement… elle évite pas
+              mal de bugs. C’est ce qu’on va explorer ensemble.
             </p>
             <p>
-              Depuis, j'utilise cette approche et je me suis rendu compte que
-              beaucoup de bugs ou d'erreurs que je vois au quotidien peuvent
-              être évités et on va voir comment. J'espère que vous aussi vous
-              changerez votre façon de coder pour produire du code de meilleure
-              qualité.
-            </p>
-            <p>
-              L'article est illustré par un exemple concret en Haskell. Je vais
-              vous le présenter dans un langage plus connus : Python.
+              J'espère que vous repartirez avec une nouvelle façon de coder,
+              plus robuste et plus sereine. L’article est illustré en Haskell,
+              mais pas de panique : je vais vous présenter l’exemple en Python,
+              histoire que ce soit plus accessible.
             </p>
           </aside>
         </section>
@@ -150,7 +149,10 @@
         <section data-background-image="jim-carrey-typing.gif">
           <h2>C’est parti !</h2>
           <aside class="notes">
-            <p>C'est parti ! On va lire du code, soyez attentifs.</p>
+            <p>
+              Allez, c’est parti ! On va plonger dans du code, alors ouvrez
+              l’œil — ça va aller vite !
+            </p>
           </aside>
         </section>
 
@@ -178,25 +180,18 @@
           </div>
           <aside class="notes">
             <p>
-              On commence avec une fonction simple qui retourne le premier
-              élément d'une séquence. Elle prend en paramètre une séquence
-              d'objects de type générique T et retourne un objet de type T.
+              On démarre avec une fonction toute simple qui retourne le premier
+              élément d’une séquence. Mais si on regarde bien… qu’est-ce qui
+              pourrait mal tourner ? …
             </p>
+            <p>⏭️ 👉 Une séquence vide, évidemment. Et là : erreur.</p>
             <p>
-              Si on considère toutes les possibilités, qu'est-ce qui pourrait
-              mal se passer ?
-            </p>
-            <p>
-              <strong>NEXT</strong> Évidemment, une séquence vide provoque une
-              erreur.
-            </p>
-            <p>
-              Le problème est que la fonction est partielle.<br />
-              <strong>NEXT</strong>
-              Toutes les entrées possibles ne sont pas prises en compte.
-            </p>
-            <p>
-              Pour corriger, il faudrait qu'on la transforme en fonction totale.
+              ⏭️ Le souci, c’est que cette fonction est partielle. Elle ne gère
+              pas tous les cas possibles. Ce qu’on veut, c’est la rendre totale.
+              <del
+                >Autrement dit : qu’elle fonctionne pour toutes les entrées,
+                sans planter. [Répétition]</del
+              >
             </p>
           </aside>
         </section>
@@ -209,16 +204,13 @@
           </p>
           <aside class="notes">
             <p>
-              À l'inverse d'une fonction partielle, une fonction totale est une
-              fonction qui prend en compte toutes les entrées possibles.
+              À l’inverse d’une fonction partielle, une fonction totale gère
+              tous les cas possibles, sans planter. Alors, comment on transforme
+              notre fonction pour qu’elle le soit ?
             </p>
             <p>
-              Comment peut-on transformer notre fonction en fonction totale ?
-            </p>
-            <p>
-              <strong>NEXT</strong>
-              Il y a deux façons de le faire, et on commence toute de suite avec
-              une solution qui parait la plus évidente.
+              ⏭️ 👉 Il y a deux options. Et on commence tout de suite par celle
+              qui semble la plus évidente.
             </p>
           </aside>
         </section>
@@ -247,18 +239,16 @@
           </div>
           <aside class="notes">
             <p>
-              Dans la solution 1, nous allons gérer le cas de la séquence vide.
+              Première solution : on gère le cas de la séquence vide. La
+              fonction renvoie soit un élément, soit None si la séquence est
+              vide.
             </p>
             <p>
-              La fonction retourne maintenant un objet de type T, ou None si la
-              séquence est vide.
+              ⏭️ 👉 En l’exécutant, plus d’erreur : une liste vide donne None,
+              tout simplement.
             </p>
             <p>
-              <strong>NEXT</strong> En exécutant ce code on voit qu'il n'y a
-              plus d'erreur. On obtient None en passant une liste vide.
-            </p>
-            <p>
-              Maintenant, on va utiliser cette fonction dans un exemple concret.
+              Maintenant, on va voir ce que ça donne dans un exemple concret.
             </p>
           </aside>
         </section>
@@ -345,17 +335,19 @@
           </code></pre>
           <aside class="notes">
             <p>
-              On va utiliser head pour obtenir le premier élément d'une liste de
-              répertoires de configuration venant d'une variable
-              d'environnement.
+              On utilise head pour récupérer le premier répertoire de config
+              depuis une variable d’environnement. C’est du concret, du
+              quotidien.
             </p>
-            <p>…</p>
+            <p>⏭️ get_config_directories…</p>
+            <p>⏭️ main…</p>
+            <p>⏭️ …</p>
             <p>
-              Cas impossible géré pour comparer avec la solution 2 et pour le
+              👉 Ici, je gère le cas impossible — juste pour qu’on puisse
+              comparer avec la deuxième solution, et aussi pour parler un peu
               typage.
             </p>
-            <p>…</p>
-            <p>Alors qu'est-ce qui ne va pas dans cette solution ?</p>
+            <p>⏭️ Alors, qu’est-ce qui cloche dans cette approche ?</p>
           </aside>
         </section>
 
@@ -370,23 +362,19 @@
               </ul>
             </li>
             <li class="fragment">
-              🐛 <strong>Un bug est probable à l’avenir</strong>
+              🐛 <strong>Un risque de bug à venir</strong>
             </li>
           </ul>
           <aside class="notes">
             <p>
-              La première chose qui saute aux yeux, ce sont les vérifications
-              redondantes. On doit vérifier la valeur de retour de
-              <code>head</code> à chaque fois qu'on l'utilise.
+              Premier truc qui saute aux yeux : ⏭️ on se retrouve à vérifier la
+              valeur de retour de head partout. C’est répétitif, un peu lourd…
+              et dans des cas plus complexes — genre dans une boucle — ça peut
+              même impacter les perfs.
             </p>
             <p>
-              Dans des cas plus complexes, cette répétition pourrait dégrader la
-              performance de l'application, surtout si la vérification est faite
-              dans une boucle.
-            </p>
-            <p>
-              Mais le point le plus important est qu'un bug est probable à
-              l'avenir. Voyons ça ensemble.
+              ⏭️ Mais surtout, le vrai problème, c’est que ça ouvre la porte à
+              des bugs. Et on va voir pourquoi.
             </p>
           </aside>
         </section>
@@ -439,13 +427,13 @@
                 main()
           </code></pre>
           <aside class="notes">
-            <p>Revenons sur notre code avec cette duplication.</p>
+            <p>Revenons à notre code, avec cette fameuse duplication.</p>
             <p>
-              <strong>NEXT</strong> On imagine que quelqu'un modifie la fonction
-              qui récupère la liste de répertoires et oublie de mettre à jour
-              <code>main</code>. Ici le code est simple et tient dans la mémoire
-              vive de notre cerveau, mais dans un vrai projet, la fonction qui
-              vérifie les données peut être très loin de celle qui les utilise.
+              ⏭️ 👉 Imaginez : quelqu’un modifie la fonction qui récupère les
+              répertoires… mais oublie de mettre à jour main. Là, c’est simple,
+              tout tient dans notre tête. Mais dans un vrai projet, la fonction
+              qui vérifie les données peut être à l’autre bout du code — loin de
+              celle qui les utilise. Et c’est là que les ennuis commencent..
             </p>
           </aside>
         </section>
@@ -493,20 +481,17 @@
                 main()
           </code></pre>
           <aside class="notes">
-            <p>La vérification est supprimée.</p>
+            <p>Là, on a supprimé la vérification.</p>
             <p>
-              <strong>NEXT</strong>
-              Le cas qui ne devait jamais arriver devient possible. Selon la loi
-              de Murphy,
-              <i>tout ce qui est susceptible d'aller mal ira mal</i>. L'erreur
-              peut arriver que bien plus tard (dans 3 mois, 1 an ou plus) quand
-              tout le monde aura oublié les changements qui ont mené à ce bug.
+              👉 Résultat : le cas "impossible" devient… possible. Et comme le
+              dit la loi de Murphy : tout ce qui peut mal tourner finira par mal
+              tourner. Le bug peut arriver dans 3 mois, dans un an… quand tout
+              le monde aura oublié pourquoi ça a été codé comme ça. Alors,
+              comment on évite ce genre de piège ?
             </p>
-            <p>Comment on peut éviter ce problème ?</p>
             <p>
-              <strong>NEXT</strong>
-              Plutôt que d'agir sur la valeur de retour, on va contraindre la
-              valeur d'entrée.
+              👉 Plutôt que de vérifier après, on va contraindre avant —
+              directement sur la valeur d’entrée.
             </p>
           </aside>
         </section>
@@ -643,7 +628,7 @@
                   😮‍💨 Vérifications redondantes<br />
                   <small>(avec un coût de performance potentiel)</small>
                 </li>
-                <li>🐛 Un bug est probable à l’avenir</li>
+                <li>🐛 Risque de bug à venir</li>
               </ul>
             </div>
             <div class="column">
@@ -731,21 +716,25 @@
           </ul>
           <aside class="notes">
             <p>
-              Pour conclure, validez qu'une fois vos données à l'entrée. Vous
-              éviterez des erreurs au milieu d'un traitement qui pourrait avoir
-              fait des effets de bord avant une exception.
+              Pour conclure, si vous devez retenir une chose : ⏭️ validez vos
+              données une seule fois, à l’entrée. C’est simple, mais
+              redoutablement efficace. Ça vous évitera bien des erreurs plus
+              loin dans le traitement — surtout si des effets de bord ont déjà
+              commencé à faire leur vie avant que ça plante.
             </p>
             <p>
-              Conservez l'information avec des types. Typez les données de votre
-              domaine métier pour le rendre plus clair.<br />
-              Arrêtez la primitive obsession, c'est-à-dire d'utiliser seulement
-              les types primitifs de votre langage. Créez des types spécifiques
-              à votre domaine.
+              ⏭️ Ensuite, typez vos données. Pas juste pour faire joli mais
+              parce que ça les rend plus claires, plus sûres, et surtout, ça
+              aide tout le monde à comprendre ce qu’on manipule. Créez des types
+              qui parlent vraiment de votre métier. Ne vous contentez pas des
+              types primitifs.
             </p>
             <p>
-              Vous éviterez ainsi des bugs avant même d'exécuter le code grâce
-              au typage. Vous aurez un retour immédiat par votre IDE, ou lors de
-              la compilation ou l'analyse statique de code.
+              ⏭️ Le résultat ? Moins de bugs, des erreurs détectées avant même
+              d’exécuter le code, et un IDE ou un compilateur qui vous dit tout
+              de suite : “Hé, là y’a un truc qui colle pas.” C’est ça, le vrai
+              gain : un code plus fiable, plus lisible, et une équipe qui
+              travaille plus sereinement.
             </p>
           </aside>
         </section>
@@ -774,12 +763,13 @@
             </a>
           </p>
           <aside class="notes">
-            <p>Merci de votre attention.</p>
+            <p>Merci à toutes et à tous !</p>
             <p>
-              Merci au Tremplain Bordelais pour m'avoir permis de faire cette
+              Merci au Tremplain Bordelais de m'avoir permis de faire cette
               présentation.
             </p>
-            <p>Merci à Anaïs Huet pour m'avoir coaché.</p>
+            <p>Merci à Anaïs de m'avoir coaché.</p>
+            <p>Avez-vous des questions ?</p>
           </aside>
         </section>
       </div>
