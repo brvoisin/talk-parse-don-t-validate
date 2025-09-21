@@ -1,10 +1,13 @@
 @import "reveal.js/dist/reset.css";
 @import "reveal.js/dist/reveal.css";
 @import "assets/css/robot-lung.css";
-@import "assets/css/monokai-sublime.css";
+@import "assets/css/papercolor-light.css";
 
 .reveal pre code.hljs {
   padding: 5px;
+}
+.reveal pre {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
 :root {
