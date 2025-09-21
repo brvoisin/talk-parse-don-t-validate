@@ -252,15 +252,66 @@
           <h3>Solution 1 : gérer la séquence vide</h3>
           <p>Les problèmes</p>
           <ul class="solution-1-problems">
-            <li class="fragment">
-              😮‍💨 Vérifications redondantes<br />
+            <li>
+              <span data-id="problem1">😮‍💨 Vérifications redondantes</span>
               <ul class="small arrow-list">
                 <li>potentielle dégradation de la performance</li>
               </ul>
             </li>
-            <li class="fragment">
-              🐛 <strong>Un bug est probable à l’avenir</strong>
+          </ul>
+          <pre><code data-trim data-line-numbers="17-18,25-29" class="language-python">
+            import os
+            from collections.abc import Sequence
+            from pathlib import Path
+
+
+            def head[T](seq: Sequence[T]) -> T | None:
+                if not seq:
+                    return None
+                return seq[0]
+
+
+            def get_config_directories() -> Sequence[Path]:
+                config_dirs_string = os.getenv("CONFIG_DIRS", "")
+                config_dirs = [
+                    Path(d) for d in config_dirs_string.split(",") if d
+                ]
+                if not config_dirs:
+                    raise ValueError("CONFIG_DIRS cannot be empty")
+                return config_dirs
+
+
+            def main() -> None:
+                config_dirs = get_config_directories()
+                match head(config_dirs):
+                    case None:
+                        raise ValueError(
+                            "should never happen; "
+                            "already checked config_dirs is non-empty"
+                        )
+                    case cache_dir:
+                        initialize_cache(cache_dir)
+
+
+            def initialize_cache(cache_dir: Path) -> None: ...
+
+
+            if __name__ == "__main__":
+                main()
+          </code></pre>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Solution 1 : gérer la séquence vide</h3>
+          <p>Les problèmes</p>
+          <ul class="solution-1-problems">
+            <li>
+              <span data-id="problem1">😮‍💨 Vérifications redondantes</span>
+              <ul class="small arrow-list">
+                <li>potentielle dégradation de la performance</li>
+              </ul>
             </li>
+            <li>🐛 <strong>Un risque de bug à venir</strong></li>
           </ul>
         </section>
 
@@ -502,7 +553,7 @@
 
         <section data-background-image="obama-wtf.gif" data-auto-animate>
           <h2 class="r-fit-text">Parse, don’t validate</h2>
-          <p>Quel est le rapport ?</p>
+          <p>Qu'est ce que ça veut dire ?</p>
         </section>
 
         <section data-auto-animate>
