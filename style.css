@@ -11,9 +11,9 @@
 }
 
 :root {
-  --color-1: #2f86a6;
-  --color-2: #79d7be;
-  --color-3: #29bb89;
+  --color-1: #533a71;
+  --color-2: #476eae;
+  --color-3: #6184d8;
   --r-main-color: black;
   --r-link-color: var(--color-1);
   --r-link-color-hover: var(--color-2);
