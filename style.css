@@ -255,6 +255,11 @@ ul.arrow-list li::before {
   content: "➔";
   margin-right: 0.5em;
 }
+.reveal pre code.small {
+  font-size: 0.95em;
+  max-height: 350px;
+  line-height: 1.25em;
+}
 
 .reveal section img.mypy-logo {
   height: 0.94em;
