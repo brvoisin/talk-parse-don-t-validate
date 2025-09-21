@@ -12,9 +12,7 @@ def head[T](seq: Sequence[T]) -> T | None:
 def get_config_directories() -> Sequence[Path]:
     config_dirs_string = os.getenv("CONFIG_DIRS", "")
     config_dirs = [
-        Path(dir)
-        for dir in config_dirs_string.split(",")
-        if dir
+        Path(d) for d in config_dirs_string.split(",") if d
     ]
     if not config_dirs:
         raise ValueError("CONFIG_DIRS cannot be empty")

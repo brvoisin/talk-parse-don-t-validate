@@ -13,9 +13,7 @@ def head(seq: NonEmptyTuple[T]) -> T:
 def get_config_directories() -> NonEmptyTuple[Path]:
     config_dirs_string = os.getenv("CONFIG_DIRS", "")
     config_dirs = tuple(
-        Path(dir)
-        for dir in config_dirs_string.split(",")
-        if dir
+        Path(d) for d in config_dirs_string.split(",") if d
     )
     if not is_non_empty(config_dirs):
         raise ValueError("CONFIG_DIRS cannot be empty")
