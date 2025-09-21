@@ -168,10 +168,7 @@ a.discret {
   margin: 0;
   font-size: 0.85em;
 }
-.speaker-card .info .location::before,
-.speaker-card .info .organization::before,
-.speaker-card .info .position::before,
-.speaker-card .info .experience::before {
+.speaker-card .info li::before {
   content: "";
   mask-repeat: no-repeat;
   background-color: var(--r-main-color);
@@ -181,20 +178,23 @@ a.discret {
   margin-right: 0.4em;
   vertical-align: sub;
 }
-.speaker-card .info .location::before {
+.speaker-card .info li.location::before {
   mask-image: url("assets/images/location.svg");
 }
-.speaker-card .info .organization::before {
+.speaker-card .info li.organization::before {
   mask-image: url("assets/images/office.svg");
 }
-.speaker-card .info .organization > a {
+.speaker-card .info li > a {
   margin-left: -0.25em; /* Offset the whitespace from indentation */
 }
-.speaker-card .info .position::before {
+.speaker-card .info li.position::before {
   mask-image: url("assets/images/bag.svg");
 }
-.speaker-card .info .experience::before {
+.speaker-card .info li.experience::before {
   mask-image: url("assets/images/clock.svg");
+}
+.speaker-card .info li.linkedin::before {
+  mask-image: url("assets/images/linkedin.svg");
 }
 
 .preview {
