@@ -15,8 +15,8 @@
   --color-2: #476eae;
   --color-3: #6184d8;
   --r-main-color: black;
-  --r-link-color: var(--color-1);
-  --r-link-color-hover: var(--color-2);
+  --r-link-color: var(--color-2);
+  --r-link-color-hover: var(--color-3);
   --r-image-link-color: color-mix(in srgb, var(--color-2), transparent 80%);
 }
 
@@ -76,7 +76,8 @@
   text-decoration: underline;
 }
 .reveal .progress {
-  color: var(--r-link-color);
+  color: var(--color-1);
+
   height: 5px;
 }
 /* Theme overrides end */
