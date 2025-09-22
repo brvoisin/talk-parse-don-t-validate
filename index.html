@@ -176,36 +176,6 @@
           </div>
         </section>
 
-        <section data-auto-animate data-visibility="hidden">
-          <h3>Solution 1 : gérer la séquence vide</h3>
-          <pre
-            data-id="code-solution-1"
-          ><code data-trim data-line-numbers class="language-python">
-            from collections.abc import Sequence
-            from typing import NewType
-
-            NothingType = NewType("NothingType", str)
-            Nothing = NothingType("Nothing")
-
-            def head[T](seq: Sequence[T]) -> T | NothingType:
-                if not seq:
-                    return Nothing
-                return seq[0]
-          </code></pre>
-          <div class="fragment">
-            <pre><code data-trim data-line-numbers class="language-python">
-              print(head([]))
-              print(head([1, 2, 3]))
-              print(head([None]))
-            </code></pre>
-            <pre><code data-trim class="language-plaintext">
-              Nothing
-              1
-              None
-            </code></pre>
-          </div>
-        </section>
-
         <section data-auto-animate>
           <h3>Solution 1 : gérer la séquence vide</h3>
           <p class="small">
