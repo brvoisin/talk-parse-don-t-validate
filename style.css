@@ -310,6 +310,11 @@ pre + .output {
   text-decoration: line-through;
 }
 
+.reveal pre code.big {
+  font-size: 1.05em;
+  line-height: 1.3em;
+}
+
 .conclusion h1 {
   margin-bottom: 0.5em;
 }

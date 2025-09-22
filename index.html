@@ -583,6 +583,21 @@
           </p>
         </section>
 
+        <section data-visibility="hidden">
+          <p>Sans connaitre son nom, que fait cette fonction ?</p>
+          <pre><code data-trim class="language-python big">
+            def func(arg1: str, arg2: str) -> int:
+                ...
+          </code></pre>
+          <div class="fragment">
+            <p>et avec des types ?</p>
+            <pre><code data-trim class="language-python big">
+              def func(arg1: ValidPhoneNumber, arg2: Message) -> SubmitStatus:
+                  ...
+            </code></pre>
+          </div>
+        </section>
+
         <section data-auto-animate class="conclusion">
           <h1>Parse, don’t validate</h1>
           <ul>
