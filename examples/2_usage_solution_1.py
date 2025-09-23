@@ -21,14 +21,13 @@ def get_config_directories() -> Sequence[Path]:
 
 def main() -> None:
     config_dirs = get_config_directories()
-    match head(config_dirs):
-        case None:
-            raise ValueError(
-                "should never happen; "
-                "already checked config_dirs is non-empty"
-            )
-        case cache_dir:
-            initialize_cache(cache_dir)
+    cache_dir = head(config_dirs)
+    if cache_dir is None:
+        raise ValueError(
+            "should never happen; "
+            "already checked config_dirs is non-empty"
+        )
+    initialize_cache(cache_dir)
 
 
 def initialize_cache(cache_dir: Path) -> None:

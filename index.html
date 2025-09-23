@@ -195,7 +195,7 @@
           </p>
           <pre
             data-id="code-solution-1"
-          ><code data-trim data-line-numbers="6-9|12-19|22-31|23-24|25-29|17-18,25-29|30-31|22-31" class="language-python">
+          ><code data-trim data-line-numbers="6-9|12-19|22-30|23-24|25-29|17-18,25-29|30|22-30" class="language-python">
             import os
             from collections.abc import Sequence
             from pathlib import Path
@@ -219,14 +219,13 @@
 
             def main() -> None:
                 config_dirs = get_config_directories()
-                match head(config_dirs):
-                    case None:
-                        raise ValueError(
-                            "should never happen; "
-                            "already checked config_dirs is non-empty"
-                        )
-                    case cache_dir:
-                        initialize_cache(cache_dir)
+                cache_dir = head(config_dirs)
+                if cache_dir is None:
+                    raise ValueError(
+                        "should never happen; "
+                        "already checked config_dirs is non-empty"
+                    )
+                initialize_cache(cache_dir)
 
 
             def initialize_cache(cache_dir: Path) -> None: ...
@@ -282,14 +281,13 @@
 
             def main() -> None:
                 config_dirs = get_config_directories()
-                match head(config_dirs):
-                    case None:
-                        raise ValueError(
-                            "should never happen; "
-                            "already checked config_dirs is non-empty"
-                        )
-                    case cache_dir:
-                        initialize_cache(cache_dir)
+                cache_dir = head(config_dirs)
+                if cache_dir is None:
+                    raise ValueError(
+                        "should never happen; "
+                        "already checked config_dirs is non-empty"
+                    )
+                initialize_cache(cache_dir)
 
 
             def initialize_cache(cache_dir: Path) -> None: ...
@@ -343,14 +341,13 @@
 
             def main() -> None:
                 config_dirs = get_config_directories()
-                match head(config_dirs):
-                    case None:
-                        raise ValueError(
-                            "should never happen; "
-                            "already checked config_dirs is non-empty"
-                        )
-                    case cache_dir:
-                        initialize_cache(cache_dir)
+                cache_dir = head(config_dirs)
+                if cache_dir is None:
+                    raise ValueError(
+                        "should never happen; "
+                        "already checked config_dirs is non-empty"
+                    )
+                initialize_cache(cache_dir)
 
 
             def initialize_cache(cache_dir: Path) -> None: ...
@@ -392,11 +389,10 @@
 
             def main() -> None:
                 config_dirs = get_config_directories()
-                match head(config_dirs):
-                    case None:
-                        raise ValueError("Hello! I’m a new bug!")
-                    case cache_dir:
-                        initialize_cache(cache_dir)
+                cache_dir = head(config_dirs)
+                if cache_dir is None:
+                    raise ValueError("Hello! I’m a new bug!")
+                initialize_cache(cache_dir)
 
 
             def initialize_cache(cache_dir: Path) -> None: ...
