@@ -142,6 +142,10 @@
               toutes les entrées possibles ne sont pas prises en compte.
             </p>
           </div>
+          <aside class="notes">
+            <p>⏭️ execution avec liste vide</p>
+            <p>⏭️ fonction partielle</p>
+          </aside>
         </section>
 
         <section>
@@ -150,6 +154,9 @@
           <p class="fragment">
             Il y a 2 solutions pour rendre notre fonction totale.
           </p>
+          <aside class="notes">
+            <p>⏭️ 2 options</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -174,6 +181,10 @@
               1
             </code></pre>
           </div>
+          <aside class="notes">
+            <p>⏭️ execution sans planter</p>
+            <p>Voyons un exemple concret</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -224,6 +235,16 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
+          <aside class="notes">
+            <p>⏭️ get_config_directories</p>
+            <p>⏭️ main</p>
+            <p>⏭️ main: appelle head, 2 cas</p>
+            <p>⏭️ main: cas None</p>
+            <p>⏭️ main: impossible</p>
+            <p>⏭️ main: cas répertoire</p>
+            <p>⏭️ main: pourquoi gérer None ?</p>
+            <p>Qu'est ce qui cloche ?</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -338,6 +359,10 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
+          <aside class="notes">
+            <p>Duplication</p>
+            <p>⏭️ Imaginons quelqu'un modifie…</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -380,6 +405,11 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
+          <aside class="notes">
+            <p>On supprime la vérif</p>
+            <p>⏭️ le cas impossible devient possible… comment éviter ça ?</p>
+            <p>⏭️ Plutôt que de vérifier après, on va contraindre avant</p>
+          </aside>
         </section>
 
         <section data-auto-animate data-auto-animate-restart>
@@ -409,6 +439,11 @@
               — Aaron Zuspan
             </p>
           </div>
+          <aside class="notes">
+            <p>⏭️ on change head</p>
+            <p>⏭️ nouveau type</p>
+            <p>⏭️ head sans vérif</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -447,6 +482,10 @@
               Argument 1 to "head" has incompatible type "tuple[Never, ...]"; expected "tuple[Never, *tuple[Never, ...]]"  [arg-type]
             </code></pre>
           </div>
+          <aside class="notes">
+            <p>On retrouve l'erreur</p>
+            <p>⏭️ mypy vérifie le typage statiquement, param incompatible</p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -497,6 +536,11 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
+          <aside class="notes">
+            <p>⏭️ get_config_directories → tuple non vide de chemins</p>
+            <p>⏭️ is_non_empty garantit que le tuple est non vide</p>
+            <p>⏭️ main simple, le bug ne peut plus arriver</p>
+          </aside>
         </section>
 
         <section>
@@ -553,6 +597,13 @@
             Le numéro de téléphone est une chaîne de caractères, par précaution
             on vérifie son format à chaque envoi.
           </p>
+          <aside class="notes">
+            <p>⏭️ fonction qui valide le format</p>
+            <p>
+              ⏭️ fonction qui envoie un mesage à un numéro en
+              <strong>chaîne de caractères</strong> → code défensif
+            </p>
+          </aside>
         </section>
 
         <section data-auto-animate>
@@ -581,6 +632,11 @@
             Le type indique que le numéro est valide, plus besoin de vérifier
             son format à chaque envoi.
           </p>
+          <aside class="notes">
+            <p>Version parse, nouveau type</p>
+            <p>⏭️ fonction validation devient fonction parsing</p>
+            <p>⏭️ à l'envoi plus besoin de vérifier</p>
+          </aside>
         </section>
 
         <section data-visibility="hidden">
@@ -613,6 +669,11 @@
               >
             </li>
           </ul>
+          <aside class="notes">
+            <p>⏭️ Validez qu'un fois vos données</p>
+            <p>⏭️ Typez vos données</p>
+            <p>⏭️ Moins de bugs</p>
+          </aside>
         </section>
 
         <section>
