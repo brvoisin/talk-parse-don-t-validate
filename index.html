@@ -648,19 +648,31 @@
           </aside>
         </section>
 
-        <section data-visibility="hidden">
-          <p>Sans connaitre son nom, que fait cette fonction ?</p>
+        <section>
           <pre><code data-trim class="language-python big">
-            def func(arg1: str, arg2: str) -> int:
+            def func(arg1, arg2):
                 ...
           </code></pre>
+          <p>🤔</p>
           <div class="fragment">
-            <p>et avec des types ?</p>
+            <pre><code data-trim class="language-python big">
+              def func(arg1: str, arg2: str) -> int:
+                  ...
+            </code></pre>
+            <p>🤨</p>
+          </div>
+          <div class="fragment">
             <pre><code data-trim class="language-python big">
               def func(arg1: ValidPhoneNumber, arg2: Message) -> SubmitStatus:
                   ...
             </code></pre>
+            <p>🤯</p>
           </div>
+          <aside class="notes">
+            <p>Fonction mal nomée, que fait-elle ?</p>
+            <p>⏭️ Annotation de type mais types primitifs</p>
+            <p>⏭️ Les types métiers donnent du sens</p>
+          </aside>
         </section>
 
         <section data-auto-animate class="conclusion">
