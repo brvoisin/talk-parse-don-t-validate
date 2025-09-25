@@ -411,10 +411,10 @@
             <pre
               data-id="code-solution-2"
             ><code data-trim data-line-numbers="|3-4|7-8" class="language-python" data-fragment-index="1">
-              from typing import TypeVar, Unpack
+              from typing import TypeVar
 
               T = TypeVar("T")
-              NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
+              NonEmptyTuple = tuple[T, *tuple[T, ...]]
 
 
               def head(seq: NonEmptyTuple[T]) -> T:
@@ -444,10 +444,10 @@
           <pre
             data-id="code-solution-2"
           ><code data-trim data-line-numbers class="language-python">
-            from typing import TypeVar, Unpack
+            from typing import TypeVar
 
             T = TypeVar("T")
-            NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
+            NonEmptyTuple = tuple[T, *tuple[T, ...]]
 
 
             def head(seq: NonEmptyTuple[T]) -> T:
@@ -512,10 +512,10 @@
           ><code data-trim data-line-numbers="1-10|13-20|18,23-26|29-31" class="language-python">
             import os
             from pathlib import Path
-            from typing import TypeGuard, TypeVar, Unpack
+            from typing import TypeGuard, TypeVar
 
             T = TypeVar("T")
-            NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
+            NonEmptyTuple = tuple[T, *tuple[T, ...]]
 
 
             def head(seq: NonEmptyTuple[T]) -> T:

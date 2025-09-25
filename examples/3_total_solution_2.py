@@ -1,7 +1,7 @@
-from typing import TypeVar, Unpack
+from typing import TypeVar
 
 T = TypeVar("T")
-NonEmptyTuple = tuple[T, Unpack[tuple[T, ...]]]
+NonEmptyTuple = tuple[T, *tuple[T, ...]]
 
 
 def head(seq: NonEmptyTuple[T]) -> T:
