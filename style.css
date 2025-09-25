@@ -269,10 +269,10 @@ ul.arrow-list li::before {
 }
 
 pre:has(+ .output) {
-  margin-bottom: 0.1em;
+  margin-bottom: 0.2em;
 }
 pre + .output {
-  margin-top: 0.1em;
+  margin-top: 0.2em;
 }
 .language-bash::before {
   content: "$";
