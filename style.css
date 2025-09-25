@@ -284,6 +284,12 @@ pre + .output {
   word-break: break-all;
 }
 
+.reveal section img.ide-icon {
+  height: 1em;
+  margin: 0 0.2em 0 0;
+  vertical-align: sub;
+}
+
 .columnContainer {
   display: flex;
   flex-direction: row;
