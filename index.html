@@ -134,7 +134,7 @@
               IndexError: list index out of range
             </code></pre>
           </div>
-          <div class="fragment">
+          <div class="fragment fade-up">
             <p>
               La fonction est <strong>partielle</strong> :<br />
               toutes les entrées possibles ne sont pas prises en compte.
@@ -149,7 +149,7 @@
         <section>
           <h2>Fonction totale</h2>
           <p>Toutes les entrées possibles sont prises en compte.</p>
-          <p class="fragment">
+          <p class="fragment fade-up">
             Il y a 2 solutions pour rendre notre fonction totale.
           </p>
           <aside class="notes">
@@ -247,14 +247,14 @@
           <h3>Solution 1 : gérer la séquence vide</h3>
           <p>Les problèmes</p>
           <ul class="solution-1-problems">
-            <li>
+            <li class="fragment semi-fade-out" data-fragment-index="0">
               <span>😮‍💨 Vérifications redondantes</span>
               <ul class="small arrow-list">
                 <li>duplication de code</li>
                 <li>potentielle dégradation de la performance</li>
               </ul>
             </li>
-            <li class="fragment fade-in-then-out" data-fragment-index="0">
+            <li class="fragment fade-in" data-fragment-index="0">
               🐛 <strong>Un risque de bug à venir</strong>
             </li>
           </ul>
@@ -304,7 +304,7 @@
             <img
               src="assets/images/fail-blue-screen.gif"
               alt="Error screen"
-              class="fragment fade-in error-screen"
+              class="fragment fade-up error-screen"
               data-fragment-index="0"
             />
           </div>
@@ -681,14 +681,14 @@
         <section data-auto-animate class="conclusion">
           <h1>Parse, don’t validate</h1>
           <ul>
-            <li class="fragment">
+            <li class="fragment fade-up">
               Vérifiez une seule fois vos données à l'entrée
             </li>
-            <li class="fragment">
+            <li class="fragment fade-up">
               Conservez l’information avec des types<br />
               <span class="small">(stop à la primitive obsession)</span>
             </li>
-            <li class="fragment">
+            <li class="fragment fade-up">
               Des bugs évités grâce au typage avant même d’exécuter le code<br />
               <span class="small"
                 >(IDE, compilation ou analyse statique de code)</span
