@@ -618,7 +618,9 @@
         <section data-auto-animate>
           <h2><strong>Parse</strong>, don’t validate</h2>
           <p>Envoi d’un message à un numéro de téléphone</p>
-          <pre><code data-trim data-line-numbers="|6-9|12-15" data-fragment-index="0" class="language-python">
+          <pre
+            data-id="phone-message"
+          ><code data-trim data-line-numbers="|6-9|12-15" data-fragment-index="0" class="language-python">
             from typing import NewType
 
             ValidPhoneNumber = NewType("ValidPhoneNumber", str)
@@ -643,7 +645,34 @@
             <p>Version parse, nouveau type</p>
             <p>⏭️ fonction validation devient fonction parsing</p>
             <p>⏭️ à l'envoi plus besoin de vérifier</p>
+            <p>Pourquoi s'arrêter là ?</p>
           </aside>
+        </section>
+
+        <section data-auto-animate>
+          <h2><strong>Parse</strong>, don’t validate</h2>
+          <p>Envoi d’un message à un numéro de téléphone</p>
+          <pre
+            data-id="phone-message"
+          ><code data-trim data-line-numbers="4,13-16" class="language-python">
+            from typing import NewType
+
+            ValidPhoneNumber = NewType("ValidPhoneNumber", str)
+            Message = NewType("Message", str)
+
+
+            def parse_phone_number(text: str) -> ValidPhoneNumber:
+                if len(text) != 10 and not text.isdigit():
+                    raise ValueError("Invalid phone number")
+                return ValidPhoneNumber(text)
+
+
+            def send_message(
+                phone_number: ValidPhoneNumber, message: Message
+            ) -> None:
+                print(f"Sending message to {phone_number}: {message}")
+          </code></pre>
+          <p>Typons aussi le message.</p>
         </section>
 
         <section>
