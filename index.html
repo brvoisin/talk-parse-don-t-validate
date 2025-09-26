@@ -248,13 +248,19 @@
           <p>Les problèmes</p>
           <ul class="solution-1-problems">
             <li>
-              <span data-id="problem1">😮‍💨 Vérifications redondantes</span>
+              <span>😮‍💨 Vérifications redondantes</span>
               <ul class="small arrow-list">
                 <li>potentielle dégradation de la performance</li>
               </ul>
             </li>
+            <li class="fragment fade-in-then-out" data-fragment-index="0">
+              🐛 <strong>Un risque de bug à venir</strong>
+            </li>
           </ul>
-          <pre><code data-trim data-line-numbers="17-18,25-29" class="language-python small">
+          <pre
+            class="fragment fade-out"
+            data-fragment-index="0"
+          ><code data-trim data-line-numbers="17-18,25-29" class="language-python small">
             import os
             from collections.abc import Sequence
             from pathlib import Path
@@ -293,20 +299,6 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
-        </section>
-
-        <section data-auto-animate>
-          <h3>Solution 1 : gérer la séquence vide</h3>
-          <p>Les problèmes</p>
-          <ul class="solution-1-problems">
-            <li>
-              <span data-id="problem1">😮‍💨 Vérifications redondantes</span>
-              <ul class="small arrow-list">
-                <li>potentielle dégradation de la performance</li>
-              </ul>
-            </li>
-            <li>🐛 <strong>Un risque de bug à venir</strong></li>
-          </ul>
         </section>
 
         <section data-auto-animate>
