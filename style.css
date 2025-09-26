@@ -327,6 +327,9 @@ p.heading {
   font-size: 1.05em;
   line-height: 1.3em;
 }
+.type-meaning {
+  margin-top: 2em;
+}
 
 .conclusion h1 {
   margin-bottom: 0.5em;

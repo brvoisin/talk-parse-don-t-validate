@@ -647,19 +647,24 @@
         </section>
 
         <section>
-          <pre><code data-trim class="language-python big">
-            def func(arg1, arg2):
-                ...
-          </code></pre>
-          <p>🤔</p>
-          <div class="fragment">
-            <pre><code data-trim class="language-python big">
+          <div class="r-stack">
+            <pre
+              class="fragment fade-out"
+              data-fragment-index="0"
+            ><code data-trim class="language-python big">
+              def func(arg1, arg2):
+                  ...
+            </code></pre>
+            <pre
+              class="fragment fade-in"
+              data-fragment-index="0"
+            ><code data-trim class="language-python big">
               def func(arg1: str, arg2: str) -> int:
                   ...
             </code></pre>
-            <p>🤨</p>
           </div>
-          <div class="fragment">
+          <p>🤨</p>
+          <div class="fragment fade-up type-meaning">
             <pre><code data-trim class="language-python big">
               def func(arg1: ValidPhoneNumber, arg2: Message) -> SubmitStatus:
                   ...
