@@ -243,7 +243,7 @@ section[data-background-image] h2 {
   text-shadow: black 0 0 5px;
 }
 
-.solution-1-problems li {
+ul.solution-1-problems > li {
   margin-bottom: 0.6em;
 }
 .reveal ul.arrow-list {
@@ -257,9 +257,9 @@ ul.arrow-list li::before {
   margin-right: 0.5em;
 }
 .reveal pre code.small {
-  font-size: 0.9em;
-  max-height: 320px;
-  line-height: 1.2em;
+  font-size: 0.88em;
+  max-height: 300px;
+  line-height: 1.1em;
 }
 .r-stack .error-screen {
   height: 100%;
@@ -310,8 +310,12 @@ pre + .output {
   border-right: none;
   padding-right: 0;
 }
-.heading {
+p.heading {
   font-size: 1.21em;
+  margin-bottom: 1em;
+}
+.recap li {
+  margin-bottom: 1.3em;
 }
 
 .erased {
