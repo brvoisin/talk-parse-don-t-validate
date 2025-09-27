@@ -37,6 +37,11 @@
             alt="Crafts Records"
             class="crafts-records"
           />
+          <aside class="notes">
+            <p>On va voir ensemble…</p>
+            <p>On va pas tous régler, mais on peut clairement en éviter.</p>
+            <p>Spoiler: on va utiliser les types pour y parvenir.</p>
+          </aside>
         </section>
 
         <section>
@@ -122,6 +127,9 @@
 
         <section data-background-image="jim-carrey-typing.gif">
           <h2>C’est parti !</h2>
+          <aside class="notes">
+            <p>Allez, on attaque !</p>
+          </aside>
         </section>
 
         <section>
@@ -147,7 +155,9 @@
             </p>
           </div>
           <aside class="notes">
-            <p>⏭️ execution avec liste vide</p>
+            <p>fonction simple, annotation de types</p>
+            <p>Ici, qu'est ce qui pourrait mal se passer ?</p>
+            <p>⏭️ passe une liste vide, ça plante</p>
             <p>⏭️ fonction partielle</p>
           </aside>
         </section>
@@ -186,6 +196,7 @@
             </code></pre>
           </div>
           <aside class="notes">
+            <p>Première solution, on gère le cas…</p>
             <p>⏭️ execution sans planter</p>
             <p>Voyons un exemple concret</p>
           </aside>
@@ -405,8 +416,12 @@
                 main()
           </code></pre>
           <aside class="notes">
-            <p>On supprime la vérif</p>
-            <p>⏭️ le cas impossible devient possible… comment éviter ça ?</p>
+            <p>supprime la vérif mais oublie main</p>
+            <p>ici simple / vérif loin de l'utilisation</p>
+            <p>
+              ⏭️ le cas impossible devient possible<br />Murphy<br />bug plus
+              tard<br />comment éviter ça ?
+            </p>
             <p>⏭️ Plutôt que de vérifier après, on va contraindre avant</p>
           </aside>
         </section>
@@ -440,8 +455,12 @@
           </div>
           <aside class="notes">
             <p>⏭️ on change head</p>
-            <p>⏭️ nouveau type</p>
+            <p>
+              ⏭️ nouveau type<br />→ alias pour un tuple avec un élément suivi
+              de zéro ou plus autres éléments<br />→ article
+            </p>
             <p>⏭️ head sans vérif</p>
+            <p>suite → execution</p>
           </aside>
         </section>
 
@@ -502,8 +521,11 @@
             </p>
           </div>
           <aside class="notes">
-            <p>On retrouve l'erreur</p>
-            <p>⏭️ mypy vérifie le typage statiquement, param incompatible</p>
+            <p>Au runtime… on retrouve l'erreur</p>
+            <p>
+              ⏭️ outil qui vérifie le typage statiquement, en analysant le code
+              source.<br />param incompatible
+            </p>
             <p>⏭️ IDE</p>
           </aside>
         </section>
@@ -558,8 +580,14 @@
           </code></pre>
           <aside class="notes">
             <p>⏭️ get_config_directories → tuple non vide de chemins</p>
-            <p>⏭️ is_non_empty garantit que le tuple est non vide</p>
-            <p>⏭️ main simple, le bug ne peut plus arriver</p>
+            <p>
+              ⏭️ is_non_empty garantit que le tuple est non vide<br />TypeGuard,
+              article
+            </p>
+            <p>
+              ⏭️ main simple, <del>None</del>, le bug ne peut plus arriver,
+              <strong>le typage nous protège</strong>, mypy
+            </p>
           </aside>
         </section>
 
@@ -605,6 +633,11 @@
               </ul>
             </div>
           </div>
+          <aside class="notes">
+            <p>Pour résumer</p>
+            <p>⏭️ solution 1</p>
+            <p>⏭️ solution 2</p>
+          </aside>
         </section>
 
         <section data-background-image="obama-wtf.gif" data-auto-animate>
@@ -633,7 +666,8 @@
             <p>⏭️ fonction qui valide le format</p>
             <p>
               ⏭️ fonction qui envoie un mesage à un numéro en
-              <strong>chaîne de caractères</strong> → code défensif
+              <strong>chaîne de caractères</strong><br />→ code défensif<br />→
+              effet de bord
             </p>
           </aside>
         </section>
@@ -666,9 +700,18 @@
           </p>
           <aside class="notes">
             <p>Version parse, nouveau type</p>
-            <p>⏭️ fonction validation devient fonction parsing</p>
-            <p>⏭️ à l'envoi plus besoin de vérifier</p>
-            <p>Pourquoi s'arrêter là ?</p>
+            <p>
+              ⏭️ fonction validation devient fonction parsing<br />→
+              <strong>
+                règle métier du format représentée par ce nouveau type
+              </strong>
+            </p>
+            <p>
+              ⏭️ à l'envoi plus besoin de vérifier <br />→ au lieu str,
+              <strong>vrai type métier qui en dit beaucoup plus</strong> et
+              garantit la validité.
+            </p>
+            <p>message → str, mais certainement règles métiers à respecter.</p>
           </aside>
         </section>
 
@@ -696,6 +739,14 @@
                 print(f"Sending message to {phone_number}: {message}")
           </code></pre>
           <p>Typons aussi le message.</p>
+          <aside class="notes">
+            <p>pas de parse mais on peut imaginer…</p>
+            <p>
+              <strong>
+                Le type conserve l'information sur ces règles métiers.
+              </strong>
+            </p>
+          </aside>
         </section>
 
         <section>
@@ -726,7 +777,9 @@
           <aside class="notes">
             <p>Fonction mal nomée, que fait-elle ?</p>
             <p>⏭️ Annotation de type mais types primitifs</p>
-            <p>⏭️ Les types métiers donnent du sens</p>
+            <p>
+              ⏭️ <strong>Les types métiers donnent du sens à votre code</strong>
+            </p>
           </aside>
         </section>
 
@@ -748,9 +801,25 @@
             </li>
           </ul>
           <aside class="notes">
-            <p>⏭️ Vérifiez qu'un fois vos données</p>
-            <p>⏭️ Typez vos données</p>
-            <p>⏭️ Moins de bugs</p>
+            <p>Pour conclure</p>
+            <p>
+              ⏭️ Vérifiez qu'un fois vos données, ça évitra des erreurs plus
+              loin… effets de bord
+            </p>
+            <p>
+              ⏭️ Typez vos données, ça aidera tout le monde. Pas de type
+              primitifs
+            </p>
+            <p>
+              ⏭️ Moins de bugs, erreurs détéctées avant même l'exécution (et
+              IDE…)
+            </p>
+            <p>
+              <strong>
+                C'est ça le vrai gain, c'est un code plus lisible et plus
+                fiable.
+              </strong>
+            </p>
           </aside>
         </section>
 
