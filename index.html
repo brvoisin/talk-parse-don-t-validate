@@ -563,8 +563,12 @@
         </section>
 
         <section>
+          <pre class="original-head"><code data-trim class="language-python">
+            def head[T](seq: Sequence[T]) -> T:
+                return seq[0]
+          </code></pre>
           <div class="columnContainer recap">
-            <div class="column solution1">
+            <div class="column solution1 fragment fade-right">
               <p class="heading">
                 Gérer la séquence vide<br />
                 en retournant <code>None</code><br />
@@ -581,7 +585,7 @@
                 <li>🐛 Un bug est probable à l’avenir</li>
               </ul>
             </div>
-            <div class="column">
+            <div class="column fragment fade-left">
               <p class="heading">
                 Interdire la séquence vide<br />
                 avec un <strong>nouveau type</strong> ✨<br />

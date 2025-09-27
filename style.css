@@ -293,21 +293,24 @@ pre + .output {
   vertical-align: sub;
 }
 
+pre.original-head {
+  max-width: 50%;
+}
 .columnContainer {
   display: flex;
   flex-direction: row;
 }
 .column {
   flex: 1;
-  border-right: var(--color-1) 2px solid;
-  padding: 1em 0.8em;
+  border-left: var(--color-1) 2px solid;
+  padding: 0.4em 0.8em;
   font-size: 0.81em;
 }
 .column:first-child {
+  border-left: none;
   padding-left: 0;
 }
 .column:last-child {
-  border-right: none;
   padding-right: 0;
 }
 p.heading {
