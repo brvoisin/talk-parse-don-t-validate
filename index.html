@@ -118,7 +118,7 @@
             />
           </div>
           <aside class="notes">
-            <p>Déclic</p>
+            <p>Déclic… type-driven design</p>
             <p>J'ai vu pas mal de bugs passés…</p>
             <p>Mon objectif… code fiable et clair</p>
             <p>Python</p>
@@ -579,6 +579,7 @@
                 main()
           </code></pre>
           <aside class="notes">
+            <p>Reprenons l'exemple des répertoires</p>
             <p>⏭️ get_config_directories → tuple non vide de chemins</p>
             <p>
               ⏭️ is_non_empty garantit que le tuple est non vide<br />TypeGuard,
@@ -586,7 +587,8 @@
             </p>
             <p>
               ⏭️ main simple, <del>None</del>, le bug ne peut plus arriver,
-              <strong>le typage nous protège</strong>, mypy
+              <strong>le typage nous protège</strong>, si on fait autrement nos
+              outils nous diront…
             </p>
           </aside>
         </section>
