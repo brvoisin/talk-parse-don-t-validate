@@ -564,12 +564,18 @@
 
         <section>
           <div class="columnContainer recap">
-            <div class="column">
+            <div class="column solution1">
               <p class="heading">
                 Gérer la séquence vide<br />
                 en retournant <code>None</code><br />
                 <small>Solution 1</small>
               </p>
+              <pre><code data-trim class="language-python">
+                def head[T](seq: Sequence[T]) -> T | None:
+                    if not seq:
+                        return None
+                    return seq[0]
+              </code></pre>
               <ul>
                 <li>😮‍💨 Vérifications redondantes</li>
                 <li>🐛 Un bug est probable à l’avenir</li>
@@ -581,6 +587,13 @@
                 avec un <strong>nouveau type</strong> ✨<br />
                 <small>Solution 2</small>
               </p>
+              <pre><code data-trim class="language-python">
+                T = TypeVar("T")
+                NonEmptyTuple = tuple[T, *tuple[T, ...]]
+
+                def head(seq: NonEmptyTuple[T]) -> T:
+                    return seq[0]
+              </code></pre>
               <ul>
                 <li>🙂 Une seule vérification</li>
                 <li>✅ Le typage empêche des erreurs</li>

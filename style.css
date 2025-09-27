@@ -300,7 +300,7 @@ pre + .output {
 .column {
   flex: 1;
   border-right: var(--color-1) 2px solid;
-  padding: 2em 0.8em;
+  padding: 1em 0.8em;
   font-size: 0.81em;
 }
 .column:first-child {
@@ -312,7 +312,13 @@ pre + .output {
 }
 p.heading {
   font-size: 1.21em;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
+}
+.recap code {
+  font-size: 0.92em;
+}
+.recap .solution1 ul {
+  margin-top: 0.635em;
 }
 .recap li {
   margin-bottom: 1.3em;
