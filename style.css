@@ -342,14 +342,10 @@ p.heading {
 
 .conclusion h1 {
   margin-bottom: 0.5em;
-  color: var(--color-2);
 }
 .conclusion ul li {
   margin-bottom: 0.6em;
   font-size: 1.15em;
-}
-.conclusion ul li::marker {
-  color: var(--color-2);
 }
 
 .slides-link {
