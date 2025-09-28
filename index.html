@@ -477,46 +477,58 @@
                 return seq[0]
           </code></pre>
           <pre><code data-trim data-line-numbers class="language-python">
-            print(head((1, 2, 3)))  # Output: 1
-            print(head(tuple()))    # Raises IndexError
+            print(head((1, 2, 3)))
+            print(head(tuple()))
           </code></pre>
-          <div class="fragment">
-            <p>
-              Utilisons un vérificateur de type statique
-              <a href="https://www.mypy-lang.org/" rel="external">
+          <div class="r-stack">
+            <pre
+              class="fragment fade-out"
+              data-fragment-index="0"
+              style="margin-top: 0"
+            ><code data-trim class="language-plaintext">
+              1
+              IndexError: tuple index out of range
+            </code></pre>
+            <div class="fragment fade-in" data-fragment-index="0">
+              <p>
+                Utilisons un vérificateur de type statique
+                <a href="https://www.mypy-lang.org/" rel="external">
+                  <img
+                    class="mypy-logo"
+                    src="assets/images/mypy.svg"
+                    alt="mypy logo"
+                  />
+                </a>
+              </p>
+              <pre><code data-trim class="language-bash">
+                mypy .
+              </code></pre>
+              <pre
+                class="output"
+              ><code data-trim class="language-plaintext wrap">
+                Argument 1 to "head" has incompatible type "tuple[Never, ...]"; expected "tuple[Never, *tuple[Never, ...]]"  [arg-type]
+              </code></pre>
+              <p class="fragment fade-up">
+                Retour immédiat par votre IDE
                 <img
-                  class="mypy-logo"
-                  src="assets/images/mypy.svg"
-                  alt="mypy logo"
+                  src="assets/images/vscode.svg"
+                  alt="Visual Studio Code"
+                  class="ide-icon"
                 />
-              </a>
-            </p>
-            <pre><code data-trim class="language-bash">
-              mypy .
-            </code></pre>
-            <pre class="output"><code data-trim class="language-plaintext wrap">
-              Argument 1 to "head" has incompatible type "tuple[Never, ...]"; expected "tuple[Never, *tuple[Never, ...]]"  [arg-type]
-            </code></pre>
-            <p class="fragment fade-up">
-              Retour immédiat par votre IDE
-              <img
-                src="assets/images/vscode.svg"
-                alt="Visual Studio Code"
-                class="ide-icon"
-              />
-              <img
-                src="assets/images/pycharm.svg"
-                alt="PyCharm"
-                class="ide-icon"
-              />
-              <img
-                src="assets/images/intellij.svg"
-                alt="IntelliJ IDEA"
-                class="ide-icon"
-              />
-              <img src="assets/images/vim.svg" alt="Vim" class="ide-icon" />
-              …
-            </p>
+                <img
+                  src="assets/images/pycharm.svg"
+                  alt="PyCharm"
+                  class="ide-icon"
+                />
+                <img
+                  src="assets/images/intellij.svg"
+                  alt="IntelliJ IDEA"
+                  class="ide-icon"
+                />
+                <img src="assets/images/vim.svg" alt="Vim" class="ide-icon" />
+                …
+              </p>
+            </div>
           </div>
           <aside class="notes">
             <p>Au runtime… on retrouve l'erreur</p>
