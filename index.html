@@ -440,17 +440,15 @@
             def head(seq: NonEmptyTuple[T]) -> T:
                 return seq[0]
           </code></pre>
-          <div class="fragment" data-fragment-index="0">
-            <p class="small">
-              <a
-                href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
-                rel="external"
-              >
-                Type Safety and Non-Empty Tuples in Python
-              </a>
-              — Aaron Zuspan
-            </p>
-          </div>
+          <p class="fragment small" data-fragment-index="0">
+            <a
+              href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
+              rel="external"
+            >
+              Type Safety and Non-Empty Tuples in Python
+            </a>
+            — Aaron Zuspan
+          </p>
           <aside class="notes">
             <p>on change head</p>
             <p>
@@ -548,7 +546,7 @@
           </p>
           <pre
             data-id="code-solution-2"
-          ><code data-trim data-line-numbers="1-10|13-20|18,23-26|29-31" class="language-python">
+          ><code data-trim data-line-numbers="1-10|13-20|18,23-26|29-31" data-fragment-index="0" class="language-python">
             import os
             from pathlib import Path
             from typing import TypeGuard, TypeVar
@@ -588,6 +586,15 @@
             if __name__ == "__main__":
                 main()
           </code></pre>
+          <p class="fragment fade-in-then-out small" data-fragment-index="1">
+            <a
+              href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
+              rel="external"
+            >
+              Type Safety and Non-Empty Tuples in Python
+            </a>
+            — Aaron Zuspan
+          </p>
           <aside class="notes">
             <p>Reprenons l'exemple des répertoires</p>
             <p>⏭️ get_config_directories → tuple non vide de chemins</p>
