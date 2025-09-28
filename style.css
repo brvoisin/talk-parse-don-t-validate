@@ -308,15 +308,17 @@ pre.original-head {
 }
 .column {
   flex: 1;
-  border-left: var(--color-1) 2px solid;
+}
+.recap .column {
   padding: 0.4em 0.8em;
   font-size: 0.81em;
+  border-left: var(--color-1) 2px solid;
 }
-.column:first-child {
+.recap .column:first-child {
   border-left: none;
   padding-left: 0;
 }
-.column:last-child {
+.recap .column:last-child {
   padding-right: 0;
 }
 p.heading {
@@ -354,39 +356,42 @@ p.heading {
   font-size: 1.15em;
 }
 
-.slides-link {
-  position: relative;
-  z-index: -2; /* behind the QR code image to make the link work */
+.thanks .columnContainer {
+  align-items: center;
 }
-.slides-link p {
-  font-size: 0.8em;
-  margin-bottom: 0;
+.thanks .column.left {
+  text-align: right;
+  padding-right: 0.5em;
 }
-.slides-link img {
+.thanks .column.right {
+  align-items: center;
+  text-align: left;
+}
+.thanks .column.right > :first-child {
   margin-top: 0;
-  background-color: white;
-  box-shadow: 0 0 100px 100px white;
-  border-radius: 30%;
-  position: relative;
-  z-index: -1; /* shadow behind surrounding texts */
+  margin-bottom: 1.3em;
+  font-size: 0.9em;
+}
+.thanks .column.right > :last-child {
+  margin-bottom: 0;
 }
 
 .powered-by,
 .sources {
-  font-size: 0.5em;
+  font-size: 0.6em;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .reveal section .powered-by img,
 .reveal section .sources img {
   margin: 0 0 0 0.4em;
+  vertical-align: middle;
 }
 .powered-by img {
-  height: 2em;
+  height: 1.7em;
 }
 .sources img {
-  height: 1.5em;
+  height: 1.4em;
 }
 .reveal section .sources img + img {
   margin-left: 0;
