@@ -780,7 +780,18 @@
           </aside>
         </section>
 
-        <section>
+        <section class="type-meaning">
+          <div class="r-stack">
+            <p class="fragment fade-out" data-fragment-index="0">
+              Que fait cette fonction ?
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
+              Avec des types primitifs
+            </p>
+            <p class="fragment fade-in" data-fragment-index="1">
+              Avec des types métier
+            </p>
+          </div>
           <div class="r-stack">
             <pre
               class="fragment fade-out"
@@ -790,20 +801,33 @@
                   ...
             </code></pre>
             <pre
-              class="fragment fade-in"
+              class="fragment fade-in-then-out"
               data-fragment-index="0"
             ><code data-trim class="language-python big">
               def func(arg1: str, arg2: str) -> int:
                   ...
             </code></pre>
-          </div>
-          <p>🤨</p>
-          <div class="fragment fade-up type-meaning">
-            <pre><code data-trim class="language-python big">
+            <pre
+              class="fragment fade-in"
+              data-fragment-index="1"
+            ><code data-trim class="language-python big">
               def func(arg1: ValidPhoneNumber, arg2: Message) -> SubmitStatus:
                   ...
             </code></pre>
-            <p>🤯</p>
+          </div>
+          <div class="r-stack">
+            <img
+              src="assets/images/confused-little-girl.gif"
+              alt="Confused"
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+            />
+            <img
+              src="assets/images/mind-blowing-tim-eric.gif"
+              alt="Mind blown"
+              class="fragment fade-in"
+              data-fragment-index="1"
+            />
           </div>
           <p class="fragment fade-up">
             Les types donnent du sens à votre code.

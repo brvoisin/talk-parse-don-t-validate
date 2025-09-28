@@ -344,8 +344,9 @@ p.heading {
   font-size: 1.05em;
   line-height: 1.3em;
 }
-.type-meaning {
-  margin-top: 2em;
+
+.type-meaning .r-stack {
+  margin: 0.7em 0;
 }
 
 .conclusion h1 {
