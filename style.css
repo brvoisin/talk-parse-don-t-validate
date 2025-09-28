@@ -3,13 +3,6 @@
 @import "assets/css/robot-lung.css";
 @import "assets/css/papercolor-light.css";
 
-.reveal pre code.hljs {
-  padding: 5px;
-}
-.reveal pre {
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
-}
-
 :root {
   --color-1: #143f7a;
   --color-2: #10599d;
@@ -19,6 +12,20 @@
   --r-link-color-hover: var(--color-3);
   --r-image-link-color: color-mix(in srgb, var(--color-3), transparent 80%);
 }
+
+/* Code syntax highlighting overrides */
+.reveal pre code.hljs {
+  padding: 5px;
+}
+.reveal pre {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+.hljs::selection,
+.hljs ::selection {
+  background: color-mix(in srgb, var(--color-3), transparent 75%);
+  color: inherit;
+}
+/* Code syntax highlighting overrides end */
 
 /* Theme overrides */
 ::selection,
