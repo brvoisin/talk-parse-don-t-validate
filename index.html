@@ -428,21 +428,19 @@
 
         <section data-auto-animate data-auto-animate-restart>
           <h3>Solution 2 : interdire la séquence vide</h3>
+          <pre
+            data-id="code-solution-2"
+          ><code data-trim data-line-numbers="|3-4|7-8" class="language-python" data-fragment-index="0">
+            from typing import TypeVar
+
+            T = TypeVar("T")
+            NonEmptyTuple = tuple[T, *tuple[T, ...]]
+
+
+            def head(seq: NonEmptyTuple[T]) -> T:
+                return seq[0]
+          </code></pre>
           <div class="fragment" data-fragment-index="0">
-            <pre
-              data-id="code-solution-2"
-            ><code data-trim data-line-numbers="|3-4|7-8" class="language-python" data-fragment-index="1">
-              from typing import TypeVar
-
-              T = TypeVar("T")
-              NonEmptyTuple = tuple[T, *tuple[T, ...]]
-
-
-              def head(seq: NonEmptyTuple[T]) -> T:
-                  return seq[0]
-            </code></pre>
-          </div>
-          <div class="fragment" data-fragment-index="1">
             <p class="small">
               <a
                 href="https://www.aazuspan.dev/blog/type-safety-and-non-empty-tuples-in-python/"
@@ -454,7 +452,7 @@
             </p>
           </div>
           <aside class="notes">
-            <p>⏭️ on change head</p>
+            <p>on change head</p>
             <p>
               ⏭️ nouveau type<br />→ alias pour un tuple avec un élément suivi
               de zéro ou plus autres éléments<br />→ article
