@@ -378,13 +378,15 @@ p.heading {
 }
 
 .powered-by,
-.sources {
+.sources,
+.contact {
   font-size: 0.6em;
   display: flex;
   align-items: center;
 }
 .reveal section .powered-by img,
-.reveal section .sources img {
+.reveal section .sources img,
+.reveal section .contact img {
   margin: 0 0 0 0.4em;
   vertical-align: middle;
 }
@@ -396,4 +398,8 @@ p.heading {
 }
 .reveal section .sources img + img {
   margin-left: 0;
+}
+.reveal section .contact img {
+  height: 1.1em;
+  vertical-align: -14.5%;
 }
