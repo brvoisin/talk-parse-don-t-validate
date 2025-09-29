@@ -379,14 +379,16 @@ p.heading {
 
 .powered-by,
 .sources,
-.contact {
+.contact,
+.feedback {
   font-size: 0.6em;
   display: flex;
   align-items: center;
 }
 .reveal section .powered-by img,
 .reveal section .sources img,
-.reveal section .contact img {
+.reveal section .contact img,
+.reveal section .feedback img {
   margin: 0 0 0 0.4em;
   vertical-align: middle;
 }
@@ -402,4 +404,9 @@ p.heading {
 .reveal section .contact img {
   height: 1.1em;
   vertical-align: -14.5%;
+}
+.reveal section .feedback img {
+  height: 1.4em;
+  vertical-align: -70%;
+  margin-left: 0.32em;
 }
