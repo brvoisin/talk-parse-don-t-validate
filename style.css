@@ -412,6 +412,12 @@ p.heading {
   height: 1.1em;
   vertical-align: -14.5%;
 }
+.reveal p.contact {
+  margin-bottom: 17px;
+}
+.reveal p.feedback {
+  margin-top: 17px;
+}
 .reveal section .feedback img {
   height: 1.4em;
   vertical-align: -70%;
