@@ -167,6 +167,12 @@ a.discret {
   width: 20%;
   height: 20%;
   border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3) 90%
+  );
 }
 .speaker-card .info {
   flex: 3;
