@@ -8,6 +8,7 @@
   --color-2: #10599d;
   --color-3: #326bae;
   --r-main-color: black;
+  --r-background-color: white;
   --r-link-color: var(--color-2);
   --r-link-color-hover: var(--color-3);
   --r-image-link-color: color-mix(in srgb, var(--color-3), transparent 80%);
@@ -220,7 +221,14 @@ a.discret {
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
-  border: 0.2em solid var(--color-2);
+  background: linear-gradient(
+        var(--r-background-color),
+        var(--r-background-color)
+      )
+      padding-box,
+    linear-gradient(to top, var(--color-1), var(--color-2), var(--color-3))
+      border-box;
+  border: 0.2em solid transparent;
 }
 .preview .link {
   font-size: 0.7em;
@@ -248,7 +256,6 @@ a.discret {
   position: absolute;
   bottom: 0.85em;
   right: 8em;
-  z-index: -1;
 }
 
 section[data-background-image],
