@@ -219,7 +219,7 @@ a.discret {
   text-align: justify;
   padding: 1.5em;
   border-radius: 1em;
-  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
   border: 0.2em solid var(--color-2);
 }
 .preview .link {
