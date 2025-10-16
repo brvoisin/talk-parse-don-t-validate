@@ -4,14 +4,18 @@
 @import "assets/css/papercolor-light.css";
 
 :root {
-  --color-1: #143f7a;
-  --color-2: #10599d;
-  --color-3: #326bae;
+  --color-top: #008aa3;
+  --color-bottom: #ff5500;
   --r-main-color: black;
+  --r-selection-color: #0300b4;
   --r-background-color: white;
-  --r-link-color: var(--color-2);
-  --r-link-color-hover: var(--color-3);
-  --r-image-link-color: color-mix(in srgb, var(--color-3), transparent 80%);
+  --r-link-color: var(--color-top);
+  --r-link-color-hover: var(--color-bottom);
+  --r-image-link-color: color-mix(
+    in srgb,
+    var(--color-bottom),
+    transparent 80%
+  );
 }
 
 /* Code syntax highlighting overrides */
@@ -23,7 +27,7 @@
 }
 .hljs::selection,
 .hljs ::selection {
-  background: color-mix(in srgb, var(--color-3), transparent 75%);
+  background: color-mix(in srgb, var(--color-bottom), transparent 75%);
   color: inherit;
 }
 /* Code syntax highlighting overrides end */
@@ -31,7 +35,7 @@
 /* Theme overrides */
 ::selection,
 ::-moz-selection {
-  background-color: var(--color-2);
+  background-color: var(--r-selection-color);
 }
 .reveal section {
   font-size: 1.2em;
@@ -62,18 +66,18 @@
   font-size: 1.48em;
 }
 .line.top {
-  background: var(--color-1);
+  background: var(--color-top);
 }
 .line.left,
 .line.right {
   background: linear-gradient(
-    var(--color-1) 10%,
-    var(--color-2) 25%,
-    var(--color-3) 50%
+    to bottom,
+    var(--color-top) 10%,
+    var(--color-bottom) 50%
   );
 }
 .line.bottom {
-  background: var(--color-3);
+  background: var(--color-bottom);
 }
 .reveal a,
 .reveal .controls {
@@ -84,8 +88,8 @@
   text-decoration: underline;
 }
 .reveal .progress {
-  color: var(--color-1);
-  height: 5px;
+  color: var(--color-top);
+  height: 4px;
 }
 /* Theme overrides end */
 
@@ -168,7 +172,11 @@ a.discret {
   width: 20%;
   height: 20%;
   border-radius: 50%;
-  background: linear-gradient(var(--color-3), var(--color-2), var(--color-1));
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-top), transparent 60%),
+    var(--color-top)
+  );
 }
 .speaker-card .info {
   flex: 3;
@@ -221,14 +229,7 @@ a.discret {
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(
-        var(--r-background-color),
-        var(--r-background-color)
-      )
-      padding-box,
-    linear-gradient(to top, var(--color-1), var(--color-2), var(--color-3))
-      border-box;
-  border: 0.2em solid transparent;
+  border: 0.2em solid color-mix(in srgb, var(--color-top), transparent 50%);
 }
 .preview .link {
   font-size: 0.7em;
@@ -327,7 +328,7 @@ pre.original-head {
 .recap .column {
   padding: 0.4em 0.8em;
   font-size: 0.81em;
-  border-left: var(--color-1) 2px solid;
+  border-left: var(--color-top) 2px solid;
 }
 .recap .column:first-child {
   border-left: none;
