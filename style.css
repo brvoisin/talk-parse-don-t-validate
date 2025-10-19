@@ -373,6 +373,38 @@ p.heading {
   font-size: 1.15em;
 }
 
+.xsmall {
+  font-size: 0.41em;
+}
+
+.reveal section img.event-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90px;
+  margin: 0;
+  z-index: -1;
+}
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+  margin-top: 1em;
+}
+.sponsor-logos img {
+  display: block;
+  max-width: 150px;
+  object-fit: contain;
+}
+.reveal section .sponsor-logos img {
+  margin: 0;
+}
+.reveal section .sponsor-logos .sqli {
+  max-width: 100px;
+  margin: 0 25px;
+}
+
 .thanks .columnContainer {
   align-items: center;
 }
