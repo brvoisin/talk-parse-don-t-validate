@@ -124,40 +124,6 @@ a.go-to-last {
   font-size: 0.8em;
 }
 
-.logos {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  margin: 1em auto 0 auto;
-}
-.logos .logo-item {
-  flex: 1;
-}
-.logos img {
-  margin: 0;
-}
-.logos .yaal {
-  margin: auto;
-  width: 3.6em;
-  height: 3.6em;
-  border-radius: 50%;
-  background-color: rgb(255, 237, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logos .yaal img {
-  width: 75%;
-}
-.logos .sinch {
-  width: 80%;
-  background-color: rgb(255, 202, 97);
-}
-
-.hidden {
-  display: none;
-}
-
 a.discret {
   color: var(--r-main-color);
 }
@@ -167,10 +133,17 @@ a.discret {
   text-align: left;
   align-items: center;
 }
-.speaker-card img.portrait {
+.speaker-card + .speaker-card {
+  margin-top: 1em;
+}
+.speaker-card > .image-container {
   flex: 1;
-  width: 20%;
-  height: 20%;
+}
+.speaker-card > .image-container img {
+  width: 100%;
+  margin: 0;
+}
+.speaker-card > .image-container img.portrait {
   border-radius: 50%;
   background: linear-gradient(
     to bottom,
@@ -181,16 +154,21 @@ a.discret {
 .speaker-card .info {
   flex: 3;
   padding-left: 1em;
+  font-size: 0.85em;
 }
 .speaker-card .info .name {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 .speaker-card .info ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.85em;
+}
+.speaker-card .info img.sinch {
+  height: 0.82em;
+  vertical-align: baseline;
+  margin: 0;
 }
 .speaker-card .info li::before {
   content: "";
@@ -209,7 +187,7 @@ a.discret {
   mask-image: url("assets/images/office.svg");
 }
 .speaker-card .info li > a {
-  margin-left: -0.25em; /* Offset the whitespace from indentation */
+  margin-left: -0.15em; /* Offset the whitespace from indentation */
 }
 .speaker-card .info li.position::before {
   mask-image: url("assets/images/bag.svg");
