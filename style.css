@@ -330,6 +330,10 @@ p.heading {
   text-decoration: line-through;
 }
 
+pre[data-id="phone-message"] code {
+  max-height: 450px;
+}
+
 .reveal pre code.big {
   font-size: 1.05em;
   line-height: 1.3em;
