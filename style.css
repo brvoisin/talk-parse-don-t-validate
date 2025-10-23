@@ -325,6 +325,9 @@ p.heading {
   margin-bottom: 1.3em;
 }
 
+section.phone-message-slide p {
+  font-size: 0.9em;
+}
 .erased {
   opacity: 0.15;
   text-decoration: line-through;

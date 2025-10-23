@@ -686,7 +686,7 @@
           <p>Qu'est ce que ça veut dire ?</p>
         </section>
 
-        <section data-auto-animate>
+        <section data-auto-animate class="phone-message-slide">
           <h2><span class="erased">Parse, don’t</span> validate</h2>
           <p>Envoi d’un message à un numéro de téléphone</p>
           <pre><code data-trim data-line-numbers="|1-2|5-8" data-fragment-index="0" class="language-python">
@@ -700,8 +700,8 @@
                 print(f"Sending message to {phone_number}: {message}")
           </code></pre>
           <p class="fragment" data-fragment-index="1">
-            Le numéro de téléphone est une chaîne de caractères, par précaution
-            on vérifie son format à chaque envoi.
+            Le numéro de téléphone est une chaîne de caractères,<br />
+            par précaution on vérifie son format à chaque envoi.
           </p>
           <aside class="notes">
             <p>⏭️ fonction qui valide le format</p>
@@ -713,7 +713,7 @@
           </aside>
         </section>
 
-        <section data-auto-animate>
+        <section data-auto-animate class="phone-message-slide">
           <h2><strong>Parse</strong>, don’t validate</h2>
           <p>Envoi d’un message à un numéro de téléphone</p>
           <pre
@@ -736,8 +736,8 @@
                 print(f"Sending message to {phone_number}: {message}")
           </code></pre>
           <p class="fragment" data-fragment-index="1">
-            Le type indique que le numéro est valide, plus besoin de vérifier
-            son format à chaque envoi.
+            Le type indique que le numéro est valide,<br />
+            plus besoin de vérifier son format à chaque envoi.
           </p>
           <aside class="notes">
             <p>Version parse, nouveau type</p>
@@ -756,7 +756,7 @@
           </aside>
         </section>
 
-        <section data-auto-animate>
+        <section data-auto-animate class="phone-message-slide">
           <h2><strong>Parse</strong>, don’t validate</h2>
           <p>Envoi d’un message à un numéro de téléphone</p>
           <pre
@@ -783,11 +783,7 @@
             <p class="fragment fade-out" data-fragment-index="0">
               Typons aussi le message.
             </p>
-            <p
-              class="fragment fade-up"
-              data-fragment-index="0"
-              style="font-size: 0.9em"
-            >
+            <p class="fragment fade-up" data-fragment-index="0">
               Les types <strong>conservent l'information</strong> sur les règles
               métier.
             </p>
