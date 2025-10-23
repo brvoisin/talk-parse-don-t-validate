@@ -383,6 +383,35 @@ p.heading {
   margin: 0 25px;
 }
 
+.forum-des-partenaires {
+  display: flex;
+  align-items: center;
+}
+section .forum-des-partenaires img {
+  margin: 0;
+}
+.forum-des-partenaires.title .new {
+  flex: 2;
+  text-align: right;
+  color: var(--color-bottom);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.forum-des-partenaires.title .logo {
+  flex: 3;
+}
+.forum-des-partenaires.description {
+  gap: 0 1em;
+}
+.forum-des-partenaires.description .illustration {
+  flex: 1;
+}
+.forum-des-partenaires.description .text {
+  flex: 2;
+  text-align: left;
+  font-size: 0.65em;
+}
+
 .thanks .columnContainer {
   align-items: center;
 }
