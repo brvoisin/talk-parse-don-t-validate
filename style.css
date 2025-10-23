@@ -351,17 +351,18 @@ p.heading {
   font-size: 1.15em;
 }
 
-.xsmall {
-  font-size: 0.41em;
-}
-
 .reveal section img.event-logo {
   position: absolute;
   top: 0;
   left: 0;
-  height: 90px;
+  height: 110px;
   margin: 0;
   z-index: -1;
+}
+p.sponsors-subtitle {
+  margin: 0 auto;
+  width: 75%;
+  font-size: 0.55em;
 }
 .sponsor-logos {
   display: flex;
