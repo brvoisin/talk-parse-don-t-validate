@@ -4,16 +4,16 @@
 @import "assets/css/papercolor-light.css";
 
 :root {
-  --color-top: #008aa3;
-  --color-bottom: #ff5500;
+  --color-atbdx-blue: #008aa3;
+  --color-atbdx-orange: #ff5500;
   --r-main-color: black;
   --r-selection-color: #0300b4;
   --r-background-color: white;
-  --r-link-color: var(--color-top);
-  --r-link-color-hover: var(--color-bottom);
+  --r-link-color: var(--color-atbdx-blue);
+  --r-link-color-hover: var(--color-atbdx-orange);
   --r-image-link-color: color-mix(
     in srgb,
-    var(--color-bottom),
+    var(--color-atbdx-orange),
     transparent 80%
   );
 }
@@ -27,7 +27,7 @@
 }
 .hljs::selection,
 .hljs ::selection {
-  background: color-mix(in srgb, var(--color-bottom), transparent 75%);
+  background: color-mix(in srgb, var(--color-atbdx-orange), transparent 75%);
   color: inherit;
 }
 /* Code syntax highlighting overrides end */
@@ -65,19 +65,16 @@
 .reveal h3 {
   font-size: 1.48em;
 }
-.line.top {
-  background: var(--color-top);
+.line {
+  background: var(--color-atbdx-blue);
+}
+.line.top,
+.line.bottom {
+  height: 20px;
 }
 .line.left,
 .line.right {
-  background: linear-gradient(
-    to bottom,
-    var(--color-top) 10%,
-    var(--color-bottom) 50%
-  );
-}
-.line.bottom {
-  background: var(--color-bottom);
+  width: 20px;
 }
 .reveal a,
 .reveal .controls {
@@ -88,8 +85,7 @@
   text-decoration: underline;
 }
 .reveal .progress {
-  color: var(--color-top);
-  height: 4px;
+  color: var(--color-atbdx-orange);
 }
 /* Theme overrides end */
 
@@ -147,8 +143,8 @@ a.discret {
   border-radius: 50%;
   background: linear-gradient(
     to bottom,
-    color-mix(in srgb, var(--color-top), transparent 60%),
-    var(--color-top)
+    color-mix(in srgb, var(--r-link-color), transparent 60%),
+    var(--r-link-color)
   );
 }
 .speaker-card .info {
@@ -207,7 +203,7 @@ a.discret {
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
-  border: 0.2em solid color-mix(in srgb, var(--color-top), transparent 50%);
+  border: 0.2em solid color-mix(in srgb, var(--r-link-color), transparent 50%);
 }
 .preview .link {
   font-size: 0.7em;
@@ -306,7 +302,7 @@ pre.original-head {
 .recap .column {
   padding: 0.4em 0.8em;
   font-size: 0.81em;
-  border-left: var(--color-top) 2px solid;
+  border-left: var(--r-link-color) 2px solid;
 }
 .recap .column:first-child {
   border-left: none;
@@ -394,7 +390,7 @@ section .forum-des-partenaires img {
 .forum-des-partenaires.title .new {
   flex: 2;
   text-align: right;
-  color: var(--color-bottom);
+  color: var(--color-atbdx-orange);
   font-weight: bold;
   font-size: 1.2em;
 }
