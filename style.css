@@ -5,6 +5,8 @@
 :root {
   --color-atbdx-blue: #008aa3;
   --color-atbdx-orange: #ff5500;
+  --color-atbdx-purple: #523497;
+  --color-atbdx-purple-light: #f6f0ff;
   --slide-border-thickness: 20px;
   --slide-border-color: var(--color-atbdx-blue);
   --r-main-font-size: 38px;
@@ -223,13 +225,17 @@ a.discret {
 
 .preview {
   position: relative;
+  background-color: var(--color-atbdx-purple-light);
   width: 84%;
   margin: auto;
   text-align: left;
   padding: 1.5em;
   border-radius: 1em;
   box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
-  border: 0.2em solid color-mix(in srgb, var(--r-link-color), transparent 50%);
+  border: 3px solid var(--color-atbdx-purple);
+}
+.preview a {
+  color: var(--color-atbdx-purple);
 }
 .preview .link {
   font-size: 0.7em;
