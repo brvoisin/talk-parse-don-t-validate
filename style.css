@@ -394,7 +394,7 @@ pre.big code {
   margin-bottom: 0.6em;
 }
 
-.reveal section img.event-logo {
+section.sponsors img.event-logo {
   position: absolute;
   top: 0;
   left: 0;
@@ -402,27 +402,29 @@ pre.big code {
   margin: 0;
   z-index: -1;
 }
-p.sponsors-subtitle {
-  margin: 0 auto;
+section.sponsors h5 {
+  margin-bottom: 0.3em;
+}
+section.sponsors p {
+  margin: 0 auto 0.2em auto;
   width: 75%;
   font-size: 0.55em;
 }
-.sponsor-logos {
+section.sponsors .logos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0 2em;
+  gap: 0 1em;
 }
-.sponsor-logos img {
+section.sponsors .logos img {
   display: block;
-  width: 145px;
-  height: 145px;
+  width: 155px;
   object-fit: contain;
 }
-.reveal section .sponsor-logos img {
+section.sponsors .logos img {
   margin: 0;
 }
-.reveal section .sponsor-logos .sqli {
+section.sponsors .logos .sqli {
   max-width: 100px;
   margin: 0 25px;
 }
