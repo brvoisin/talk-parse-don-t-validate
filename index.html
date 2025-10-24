@@ -298,9 +298,9 @@
           </ul>
           <div class="r-stack">
             <pre
-              class="fragment fade-out"
+              class="fragment fade-out small"
               data-fragment-index="0"
-            ><code data-trim data-line-numbers="17-18,25-29" class="language-python small">
+            ><code data-trim data-line-numbers="17-18,25-29" class="language-python">
               import os
               from collections.abc import Sequence
               from pathlib import Path
@@ -497,7 +497,6 @@
                 return seq[0]
           </code></pre>
           <pre><code data-trim data-line-numbers class="language-python">
-            print(head((1, 2, 3)))
             print(head(tuple()))
           </code></pre>
           <div class="r-stack">
@@ -506,10 +505,9 @@
               data-fragment-index="0"
               style="margin-top: 0"
             ><code data-trim class="language-plaintext">
-              1
               IndexError: tuple index out of range
             </code></pre>
-            <div class="fragment fade-in" data-fragment-index="0">
+            <div class="fragment fade-in small" data-fragment-index="0">
               <p>
                 Utilisons un vérificateur de type statique
                 <a href="https://www.mypy-lang.org/" rel="external">
@@ -813,23 +811,23 @@
           </div>
           <div class="r-stack">
             <pre
-              class="fragment fade-out"
+              class="fragment fade-out big"
               data-fragment-index="0"
-            ><code data-trim class="language-python big">
+            ><code data-trim class="language-python">
               def func(arg1, arg2):
                   ...
             </code></pre>
             <pre
-              class="fragment fade-in-then-out"
+              class="fragment fade-in-then-out big"
               data-fragment-index="0"
-            ><code data-trim class="language-python big">
+            ><code data-trim class="language-python">
               def func(arg1: str, arg2: str) -> int:
                   ...
             </code></pre>
             <pre
-              class="fragment fade-in"
+              class="fragment fade-in big"
               data-fragment-index="1"
-            ><code data-trim class="language-python big">
+            ><code data-trim class="language-python">
               def func(arg1: ValidPhoneNumber, arg2: Message) -> SubmitStatus:
                   ...
             </code></pre>
