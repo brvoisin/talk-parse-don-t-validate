@@ -1,12 +1,11 @@
 @import "reveal.js/dist/reveal.css";
 @import "reveal.js/dist/theme/white.css";
 @import "assets/css/papercolor-light.css";
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:700|Merriweather:400");
 
 :root {
   --color-atbdx-blue: #008aa3;
   --color-atbdx-orange: #ff5500;
-  --color-atbdx-purple: #523497;
-  --color-atbdx-purple-light: #f6f0ff;
   --slide-border-thickness: 20px;
   --slide-border-color: var(--color-atbdx-blue);
   --r-main-font-size: 38px;
@@ -225,20 +224,25 @@ a.discret {
 
 .preview {
   position: relative;
-  background-color: var(--color-atbdx-purple-light);
+  font-family: "Merriweather", serif;
+  font-size: 0.8em;
+  background-color: color-mix(in srgb, #e45b5b, transparent 95%);
   width: 84%;
   margin: auto;
   text-align: left;
   padding: 1.5em;
   border-radius: 1em;
-  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
-  border: 3px solid var(--color-atbdx-purple);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.3);
+  border: 4px solid #e45b5b;
 }
 .preview a {
-  color: var(--color-atbdx-purple);
+  color: #c54747;
+}
+.preview a:hover {
+  color: #d16e6e;
 }
 .preview .link {
-  font-size: 0.7em;
+  font-size: 0.75em;
   opacity: 0.7;
 }
 .preview .link::before {
@@ -247,14 +251,14 @@ a.discret {
 }
 .preview .title {
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 2.1em;
+  font-family: "Merriweather Sans", sans-serif;
 }
 .preview .description {
-  font-size: 0.8em;
   text-align: justify;
 }
 .preview .author {
-  font-size: 1.1em;
+  font-size: 1.3em;
   text-align: right;
 }
 .preview img.portrait {
@@ -263,7 +267,7 @@ a.discret {
   border-radius: 50%;
   position: absolute;
   bottom: 0.85em;
-  right: 7.2em;
+  right: 9.2em;
 }
 
 section[data-background-image],
