@@ -478,6 +478,13 @@ section .forum-des-partenaires img {
   margin-bottom: 1.3em;
   font-size: 0.9em;
 }
+.arrow-left::before {
+  content: "🠄";
+  margin-left: -1.1em;
+  margin-right: 0.2em;
+  position: relative;
+  z-index: 1;
+}
 .thanks .column.right > :last-child {
   margin-bottom: 0;
 }
